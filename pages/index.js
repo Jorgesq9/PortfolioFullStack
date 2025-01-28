@@ -3,7 +3,6 @@ import Navbar from "../components/NavBar";
 import About from "./about";
 import Projects from "./projects";
 import Contact from "./contact";
-import "../styles/global.css";
 
 const Home = () => {
   const [language, setLanguage] = useState("es");
