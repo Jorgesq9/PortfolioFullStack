@@ -1,59 +1,24 @@
-const Navbar = () => {
+import { useState } from "react";
+import DesktopNavBar from "./DesktopNavBar";
+import MobileNavbar from "./MobileNavBar";
+
+const Navbar = ({ setLanguage }) => {
+  const [isEnglish, setIsEnglish] = useState(false);
+
+  const toggleLanguage = () => {
+    setIsEnglish(!isEnglish);
+    if (setLanguage) {
+      setLanguage(isEnglish ? "es" : "en");
+    } else {
+      console.warn("setLanguage no está definido");
+    }
+  };
+
   return (
-    <nav className="fixed top-0 left-0 w-full bg-navbar text-white h-20 px-8 flex justify-between items-center z-50 shadow-lg">
-      <div className="flex items-center">
-        <img src="/Logo.png" alt="Logo JE" className="h-32 w-auto rounded-lg" />
-      </div>
-
-      <div className="absolute left-[48%] transform -translate-x-1/2 flex space-x-14">
-        <a
-          href="https://www.linkedin.com/in/jorge-esquiva-llobregat-614565131/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:text-[var(--link-hover)] transition-all"
-        >
-          <img src="/linkedin.png" alt="LinkedIn" className="w-10 h-10" />
-        </a>
-
-        <a
-          href="https://github.com/Jorgesq9"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:text-[var(--link-hover)] transition-all"
-        >
-          <img src="/github.png" alt="GitHub" className="w-10 h-10" />
-        </a>
-
-        <a
-          href="/cv.pdf"
-          download="CV_Jorge_Esquiva.pdf"
-          className="hover:text-[var(--link-hover)] transition-all"
-        >
-          <img src="/cv-icon.png" alt="Descargar CV" className="w-10 h-10" />
-        </a>
-      </div>
-
-      <div className="flex space-x-8 text-lg">
-        <a
-          href="#about"
-          className="hover:text-[var(--link-hover)] transition-all"
-        >
-          Sobre mí
-        </a>
-        <a
-          href="#projects"
-          className="hover:text-[var(--link-hover)] transition-all"
-        >
-          Proyectos
-        </a>
-        <a
-          href="#contact"
-          className="hover:text-[var(--link-hover)] transition-all"
-        >
-          Contacto
-        </a>
-      </div>
-    </nav>
+    <>
+      <DesktopNavBar toggleLanguage={toggleLanguage} isEnglish={isEnglish} />
+      <MobileNavbar toggleLanguage={toggleLanguage} isEnglish={isEnglish} />
+    </>
   );
 };
 

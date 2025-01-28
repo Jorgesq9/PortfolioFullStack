@@ -1,64 +1,113 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { projectsData } from "../data/projectsData";
 
-const Projects = () => {
-  const projectCategories = [
-    {
-      id: "websites",
-      title: "Páginas Web",
-      description: "Desarrollo de sitios web responsivos.",
-      link: "/projects/websites",
-    },
-
-    {
-      id: "apis",
-      title: "APIs",
-      description: "Desarrollo de APIs REST y GraphQL.",
-      link: "/projects/apis",
-    },
-    {
-      id: "games",
-      title: "Juegos",
-      description: "Proyectos de desarrollo de videojuegos.",
-      link: "/projects/games",
-    },
-  ];
-
+const Projects = ({ language }) => {
   return (
     <motion.section
       id="projects"
-      className="min-h-screen flex flex-col justify-center items-center px-8 bg-background text-textLight"
-      initial={{ opacity: 0, x: 100 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: false, amount: 0.3 }}
-      transition={{ duration: 1.2, ease: "easeOut" }}
+      className="min-h-screen py-20 px-6 md:px-12 bg-background text-textLight"
     >
-      <motion.h2
-        className="text-4xl font-bold mb-6"
-        style={{ color: "#C29B39" }}
-        initial={{ opacity: 0, y: -50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-      >
-        Mis Proyectos
-      </motion.h2>
+      <h2 className="text-4xl font-bold text-center mb-16 text-[#C29B39]">
+        {language === "es" ? "Mis Proyectos" : "My Projects"}
+      </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projectCategories.map((category) => (
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        {projectsData.map((project) => (
           <motion.div
-            key={category.id}
-            className="bg-gray-700 p-6 rounded-lg shadow-lg cursor-pointer hover:scale-105 transform transition"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2, duration: 0.6 }}
+            key={project.id}
+            className="bg-gray-800 rounded-xl p-6 shadow-2xl hover:shadow-gold/20 transition-shadow"
+            whileHover={{ y: -5 }}
           >
-            <Link href={category.link}>
-              <div className="text-center">
-                <h3 className="text-xl font-semibold mb-2">{category.title}</h3>
-                <p className="text-gray-300">{category.description}</p>
-              </div>
-            </Link>
+            {/* Título y Descripción */}
+            <h3 className="text-2xl font-bold mb-3 text-[#C29B39]">
+              {language === "es" ? project.title_es : project.title_en}
+            </h3>
+            <p className="text-gray-300 mb-4">
+              {language === "es"
+                ? project.description_es
+                : project.description_en}
+            </p>
+
+            {/* Características Principales */}
+            <div className="mb-6">
+              <h4 className="text-lg font-semibold mb-2 text-gray-400">
+                {language === "es" ? "Características Clave" : "Key Features"}
+              </h4>
+              <ul className="list-disc pl-5 space-y-2">
+                {(language === "es"
+                  ? project.features_es || []
+                  : project.features_en || []
+                ).map((feature) => (
+                  <li key={feature} className="text-gray-300 text-sm">
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Tecnologías */}
+            <div className="flex flex-wrap gap-2 mb-6">
+              {project.tech.map((tech) => (
+                <span
+                  key={tech}
+                  className="px-3 py-1 bg-gray-700 rounded-full text-sm text-gray-300"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+
+            {/* Botones y Enlaces */}
+            <div className="flex flex-wrap gap-3">
+              {project.links.demo && (
+                <Link
+                  href={project.links.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-[#C29B39] hover:bg-[#ae8a34] text-white px-4 py-2 rounded-lg flex items-center gap-2 text-sm"
+                >
+                  <span>🌐</span>
+                  {language === "es" ? "Demo Frontend" : "Frontend Demo"}
+                </Link>
+              )}
+
+              {project.links.docs && (
+                <Link
+                  href={project.links.docs}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-lg flex items-center gap-2 text-sm"
+                >
+                  <span>📚</span>
+                  API Docs
+                </Link>
+              )}
+
+              {project.links.code_api && (
+                <Link
+                  href={project.links.code_api}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg flex items-center gap-2 text-sm"
+                >
+                  <span>🔑</span>
+                  {language === "es" ? "Código API" : "API Code"}
+                </Link>
+              )}
+
+              {project.links.code_frontend && (
+                <Link
+                  href={project.links.code_frontend}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg flex items-center gap-2 text-sm"
+                >
+                  <span>🖥️</span>
+                  {language === "es" ? "Código Frontend" : "Frontend Code"}
+                </Link>
+              )}
+            </div>
           </motion.div>
         ))}
       </div>

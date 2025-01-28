@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-const Contact = () => {
+const Contact = ({ language }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -9,50 +9,72 @@ const Contact = () => {
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
+    setError("");
 
-    if (formData.name && formData.email && formData.message) {
-      console.log("Mensaje enviado:", formData);
-      setIsSubmitted(true);
-      setFormData({ name: "", email: "", message: "" });
-    } else {
-      alert("Por favor, completa todos los campos.");
+    try {
+      const response = await fetch("https://formspree.io/f/xovjebar", {
+        // Reemplaza {TU_FORM_ID}
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        throw new Error(
+          language === "es"
+            ? "Error al enviar el mensaje. Inténtalo de nuevo."
+            : "Failed to send message. Please try again."
+        );
+      }
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setIsLoading(false);
     }
   };
 
   return (
     <motion.section
       id="contact"
-      className="min-h-screen flex flex-col justify-center items-center px-8 bg-background text-textLight snap-start"
+      className="min-h-screen flex flex-col justify-center items-center px-4 sm:px-8 pt-6 sm:pt-10 bg-background text-textLight snap-start"
       initial={{ opacity: 0, scale: 0.8 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: false, amount: 0.3 }}
       transition={{ duration: 1.2, ease: "easeOut" }}
     >
       <motion.h2
-        className="text-4xl font-bold mb-6"
+        className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-center leading-tight"
         style={{ color: "#C29B39" }}
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
         transition={{ duration: 0.8 }}
       >
-        Contáctame
+        {language === "es" ? "Contáctame" : "Contact Me"}
       </motion.h2>
+
       <motion.p
-        className="text-center text-lg mb-8"
+        className="text-center text-lg mb-6"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ delay: 0.3, duration: 0.8 }}
       >
-        Puedes escribirme a{" "}
+        {language === "es" ? "Puedes escribirme a" : "You can reach me at"}{" "}
         <a
           href="mailto:jorgeesquivait@gmail.com"
           className="text-blue-400 hover:underline"
@@ -64,54 +86,58 @@ const Contact = () => {
       {!isSubmitted ? (
         <motion.form
           onSubmit={handleSubmit}
-          className="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-lg"
+          className="bg-gray-800 p-6 sm:p-8 rounded-lg shadow-lg w-full max-w-md sm:max-w-lg"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1.2, ease: "easeOut" }}
         >
-          <div className="mb-4">
-            <label className="block text-gray-300 mb-2">Nombre</label>
+          <div className="mb-3 sm:mb-4">
+            <label className="block text-gray-300 mb-1 sm:mb-2">
+              {language === "es" ? "Nombre" : "Name"}
+            </label>
             <input
               type="text"
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className="w-full p-3 rounded bg-gray-600 text-white focus:outline-none"
+              className="w-full p-2 sm:p-3 rounded bg-gray-600 text-white focus:outline-none"
               required
             />
           </div>
 
-          <div className="mb-4">
-            <label className="block text-gray-300 mb-2">
-              Correo Electrónico
+          <div className="mb-3 sm:mb-4">
+            <label className="block text-gray-300 mb-1 sm:mb-2">
+              {language === "es" ? "Correo Electrónico" : "Email"}
             </label>
             <input
               type="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full p-3 rounded bg-gray-600 text-white focus:outline-none"
+              className="w-full p-2 sm:p-3 rounded bg-gray-600 text-white focus:outline-none"
               required
             />
           </div>
 
-          <div className="mb-6">
-            <label className="block text-gray-300 mb-2">Mensaje</label>
+          <div className="mb-4">
+            <label className="block text-gray-300 mb-1 sm:mb-2">
+              {language === "es" ? "Mensaje" : "Message"}
+            </label>
             <textarea
               name="message"
               value={formData.message}
               onChange={handleChange}
-              className="w-full p-3 rounded bg-gray-600 text-white focus:outline-none h-32"
+              className="w-full p-2 sm:p-3 rounded bg-gray-600 text-white focus:outline-none h-24 sm:h-32"
               required
             ></textarea>
           </div>
 
           <button
             type="submit"
-            className="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded font-bold transition"
+            className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 sm:py-3 rounded font-bold transition"
           >
-            Enviar
+            {language === "es" ? "Enviar" : "Send"}
           </button>
         </motion.form>
       ) : (
@@ -121,7 +147,9 @@ const Contact = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
         >
-          ¡Mensaje enviado con éxito! Me pondré en contacto contigo pronto.
+          {language === "es"
+            ? "¡Mensaje enviado con éxito! Me pondré en contacto contigo pronto."
+            : "Message sent successfully! I will get in touch with you soon."}
         </motion.p>
       )}
     </motion.section>

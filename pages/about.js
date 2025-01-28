@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const About = () => {
+const About = ({ language }) => {
   return (
     <motion.section
       id="about"
@@ -11,14 +11,14 @@ const About = () => {
       transition={{ duration: 1.2, ease: "easeOut" }}
     >
       <motion.h1
-        className="text-5xl font-bold mb-20"
+        className="text-3xl sm:text-4xl md:text-5xl font-bold mb-10 text-center leading-tight"
         style={{ color: "#C29B39" }}
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false }}
         transition={{ duration: 0.7, delay: 0.3 }}
       >
-        ¡Hola! Soy Jorge
+        {language === "es" ? "¡Hola! Soy Jorge" : "Hello! I'm Jorge"}
       </motion.h1>
 
       <motion.p
@@ -28,8 +28,9 @@ const About = () => {
         viewport={{ once: false }}
         transition={{ duration: 0.7, delay: 0.3 }}
       >
-        Desarrollador web apasionado por crear experiencias digitales únicas e
-        innovadoras.
+        {language === "es"
+          ? "Desarrollador web apasionado por crear experiencias digitales únicas e innovadoras."
+          : "Web developer passionate about creating unique and innovative digital experiences."}
       </motion.p>
 
       <motion.p
@@ -39,33 +40,32 @@ const About = () => {
         viewport={{ once: false }}
         transition={{ duration: 0.9, delay: 1.0 }}
       >
-        He estudiado el bootcamp full stack de desarrollo web de Ironhack, donde
-        he adquirido experiencia en tecnologías como{" "}
-        <span className="font-semibold text-highlight">
-          JavaScript, React, Node.js, Express
-        </span>
-        y <span className="font-semibold text-highlight">MongoDB</span>. Durante
-        esta formación, he aprendido a desarrollar aplicaciones web completas,
-        abarcando tanto el frontend como el backend.
-      </motion.p>
-
-      <motion.p
-        className="text-md max-w-2xl text-center"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false }}
-        transition={{ duration: 0.9, delay: 1.7 }}
-      >
-        Sin embargo, mi verdadera pasión se encuentra en el{" "}
-        <span className="font-semibold text-highlight">desarrollo backend</span>
-        . Me encanta trabajar en la gestión de servidores, bases de datos y la
-        creación de APIs eficientes y escalables. Actualmente, estoy dedicando
-        la mayor parte de mi tiempo a perfeccionar mis habilidades en
-        arquitectura backend, optimización del rendimiento y seguridad de
-        aplicaciones web, explorando tecnologías como{" "}
-        <span className="font-semibold text-highlight">Node.js, Express</span> y
-        bases de datos como{" "}
-        <span className="font-semibold text-highlight">MongoDB y SQL</span>.
+        {language === "es" ? (
+          <>
+            He estudiado el bootcamp full stack de desarrollo web de Ironhack,
+            donde he adquirido experiencia en tecnologías como
+            <span className="font-semibold text-highlight">
+              {" "}
+              JavaScript, React, Node.js, Express
+            </span>{" "}
+            y<span className="font-semibold text-highlight"> MongoDB</span>.
+            Durante esta formación, he aprendido a desarrollar aplicaciones web
+            completas, abarcando tanto el frontend como el backend.
+          </>
+        ) : (
+          <>
+            I studied the full stack web development bootcamp at Ironhack, where
+            I gained experience in technologies such as
+            <span className="font-semibold text-highlight">
+              {" "}
+              JavaScript, React, Node.js, Express,
+            </span>{" "}
+            and
+            <span className="font-semibold text-highlight"> MongoDB</span>.
+            During this training, I learned how to develop complete web
+            applications, covering both the frontend and backend.
+          </>
+        )}
       </motion.p>
     </motion.section>
   );
