@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Portfolio Personal – Jorge Esquiva 💻
 
-## Getting Started
+Este es mi portfolio como desarrollador full-stack, donde presento mis proyectos personales, habilidades técnicas, experiencia y contacto. Está diseñado con un enfoque limpio y moderno, y alojado en un servidor casero utilizando Cloudflare Tunnel.
 
-First, run the development server:
+## 🌐 Demo online
+
+Accede a mi portfolio en: [https://jorgeesquivafullstack.es](https://jorgeesquivafullstack.es)
+
+## 🎯 Objetivo
+
+El objetivo de este portfolio es presentar de forma clara y profesional:
+
+- Mis proyectos destacados con demos en vivo y enlaces al código
+- Las tecnologías que domino
+- Mis datos de contacto y enlaces a redes profesionales
+- Mi experiencia y trayectoria en el desarrollo web
+
+## 🛠 Tecnologías utilizadas
+
+- **Frontend:** React, Vite, TailwindCSS
+- **Routing:** React Router
+- **Gestión de estado:** useState, useEffect
+- **Despliegue:** Servidor casero + Cloudflare Tunnel
+- **Dominio personalizado:** jorgeesquivafullstack.es
+
+## 📂 Estructura general del proyecto
+
+PortfolioFullStack/
+│── public/ # Archivos estáticos
+│── src/
+│ ├── components/ # Componentes reutilizables
+│ ├── pages/ # Vistas principales
+│ ├── assets/ # Imágenes y logos
+│ └── App.jsx # Componente raíz
+│── package.json # Dependencias y scripts
+│── vite.config.js # Configuración de Vite
+└── README.md # Este documento
+
+
+## 🚀 Cómo levantarlo localmente
 
 ```bash
+git clone https://github.com/Jorgesq9/PortfolioFullStack.git
+cd PortfolioFullStack
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+📡 Despliegue en servidor casero
+Este portfolio está alojado en un mini-PC personal con un túnel de Cloudflare activo 24/7, lo que garantiza:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Certificados SSL gratuitos
 
-## Learn More
+Acceso desde cualquier lugar
 
-To learn more about Next.js, take a look at the following resources:
+Seguridad sin necesidad de abrir puertos
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+📜 Licencia
+Este proyecto es de código abierto bajo la licencia MIT.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+👤 Autor
+Jorge Esquiva
+Desarrollador Full-Stack
+🌐 jorgeesquivafullstack.es
+🐙 GitHub
