@@ -39,11 +39,15 @@ PortfolioFullStack/
 
 ## 🚀 Cómo levantarlo localmente
 
-```bash
+## 🚀 Cómo levantarlo localmente
+
+ ```bash
 git clone https://github.com/Jorgesq9/PortfolioFullStack.git
 cd PortfolioFullStack
 npm install
-npm run dev
+npm run dev 
+   ```
+
 
 
 📡 Despliegue en servidor casero
