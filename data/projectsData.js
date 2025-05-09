@@ -58,10 +58,10 @@ export const projectsData = [
     ],
     images: ["/Front-End.png"],
     links: {
-      demo: "http://5.175.47.216/login",
+      demo: "http://centralreservas.jorgeesquivafullstack.es/login",
       code_api: "https://github.com/Jorgesq9/Central-Reservas-BackEnd",
       code_frontend: "https://github.com/Jorgesq9/Central-reservas",
-      docs: "http://5.175.47.216:5000/api-docs/#/", // URL de Swagger
+      docs: "https://api.jorgeesquivafullstack.es/api-docs/", // URL de Swagger
     },
   },
   {
@@ -88,5 +88,29 @@ export const projectsData = [
       demo: "http://tetris.jorgeesquivafullstack.es/",
       code_frontend: "https://github.com/Jorgesq9/TetrisJS",
     },
+  },
+  {
+    id: 4,
+    title_es: "Servidor Casero Autogestionado",
+    title_en: "Self-Hosted Home Server",
+    description_es:
+      "Servidor personal configurado con túneles Cloudflare para alojar todos mis proyectos de forma segura y gratuita.",
+    description_en:
+      "Personal server configured with Cloudflare Tunnels to securely and freely host all my projects.",
+    tech: ["Cloudflare Tunnel", "Linux", "Systemd", "Nginx", "Docker", "PM2"],
+    features_es: [
+      "Alojamiento autogestionado en mini PC",
+      "Certificados SSL automáticos mediante Cloudflare",
+      "Sistema persistente con servicios configurados vía systemd",
+      "Túneles separados para cada proyecto",
+      "Redirección de subdominios con registros DNS gestionados desde Cloudflare",
+    ],
+    features_en: [
+      "Self-hosted on a mini PC",
+      "Automatic SSL certificates via Cloudflare",
+      "Persistent system using systemd-managed services",
+      "Separate tunnels for each project",
+      "Subdomain routing using Cloudflare-managed DNS records",
+    ],
   },
 ];
