@@ -51,6 +51,7 @@ npm run dev
 
 
 📡 Despliegue en servidor casero
+
 Este portfolio está alojado en un mini-PC personal con un túnel de Cloudflare activo 24/7, lo que garantiza:
 
 Certificados SSL gratuitos
@@ -61,9 +62,11 @@ Seguridad sin necesidad de abrir puertos
 
 
 📜 Licencia
+
 Este proyecto es de código abierto bajo la licencia MIT.
 
 👤 Autor
+
 Jorge Esquiva
 Desarrollador Full-Stack
 🌐 jorgeesquivafullstack.es
