@@ -34,7 +34,7 @@ const Projects = ({ language }) => {
     >
       {/* TÍTULO */}
       <motion.h2
-        className="flex-shrink-0 text-4xl font-bold text-center mt-24 mb-8 text-[#C29B39]"
+        className="flex-shrink-0 text-3xl sm:text-4xl font-bold text-center mt-8 sm:mt-24 mb-4 sm:mb-8 text-[#C29B39]"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
@@ -44,7 +44,7 @@ const Projects = ({ language }) => {
 
       {/* BOTONES */}
       <motion.div
-        className="flex-shrink-0 flex justify-center gap-4 mb-6 flex-wrap"
+        className="flex-shrink-0 flex justify-center gap-2 sm:gap-4 mb-4 sm:mb-6 flex-wrap"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.2 }}
@@ -67,8 +67,8 @@ const Projects = ({ language }) => {
       </motion.div>
 
       {/* CONTENIDO CENTRAL OCUPA ESPACIO RESTANTE */}
-      <div className="w-full flex justify-center flex-1 pb-8 mt-4">
-        <div className="w-full max-w-2xl h-[60vh] flex items-start">
+      <div className="w-full flex justify-center flex-1 pb-4 sm:pb-8 mt-2 sm:mt-8">
+        <div className="w-full max-w-2xl h-auto sm:h-[60vh] flex items-start">
           <AnimatePresence mode="wait">
             <Swiper
               key={activeCategory}
