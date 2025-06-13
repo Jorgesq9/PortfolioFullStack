@@ -26,7 +26,7 @@ const Projects = ({ language }) => {
   return (
     <motion.section
       id="projects"
-      className="h-screen flex flex-col justify-start px-6 md:px-12 bg-background text-textLight snap-start center-vertical-tablet"
+      className="h-screen flex flex-col justify-center items-center px-6 md:px-12 bg-background text-textLight snap-start py-10"
     >
       {/* TÍTULO */}
       <motion.h2
@@ -63,7 +63,7 @@ const Projects = ({ language }) => {
 
       {/* CONTENIDO CENTRAL OCUPA ESPACIO RESTANTE */}
       <div className="w-full flex justify-center flex-1 pb-8 mt-4">
-        <div className="w-full max-w-2xl md:max-w-3xl lg:max-w-2xl h-[60vh] flex items-start">
+        <div className="w-full max-w-2xl md:max-w-3xl lg:max-w-2xl flex items-center">
           <AnimatePresence mode="wait">
             <Swiper
               key={activeCategory}
