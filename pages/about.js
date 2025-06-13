@@ -29,8 +29,8 @@ const About = ({ language }) => {
         transition={{ duration: 0.7, delay: 0.3 }}
       >
         {language === "es"
-          ? "Desarrollador web apasionado por crear experiencias digitales únicas e innovadoras."
-          : "Web developer passionate about creating unique and innovative digital experiences."}
+          ? "Desarrollador web full stack con enfoque en backend y despliegue."
+          : "I'm a full-stack web developer with a strong focus on backend and deployment."}
       </motion.p>
 
       <motion.p
@@ -42,28 +42,52 @@ const About = ({ language }) => {
       >
         {language === "es" ? (
           <>
-            He estudiado el bootcamp full stack de desarrollo web de Ironhack,
-            donde he adquirido experiencia en tecnologías como
+            Me formé en el bootcamp full stack de desarrollo web de Ironhack,
+            donde trabajé con tecnologías como
             <span className="font-semibold text-highlight">
               {" "}
               JavaScript, React, Node.js, Express
             </span>{" "}
             y<span className="font-semibold text-highlight"> MongoDB</span>.
-            Durante esta formación, he aprendido a desarrollar aplicaciones web
-            completas, abarcando tanto el frontend como el backend.
+            Además, gestiono mi propio servidor con
+            <span className="font-semibold text-highlight">
+              {" "}
+              Docker, Cloudflare
+            </span>{" "}
+            y <span className="font-semibold text-highlight">systemd</span>, lo
+            que me ha permitido desplegar proyectos reales.
+            <br />
+            <br />
+            Actualmente estudio el ciclo superior de{" "}
+            <span className="font-semibold text-highlight">
+              Desarrollo de Aplicaciones Multiplataforma (DAM)
+            </span>{" "}
+            para reforzar mis conocimientos en programación avanzada y
+            arquitectura de software.
           </>
         ) : (
           <>
-            I studied the full stack web development bootcamp at Ironhack, where
-            I gained experience in technologies such as
+            I trained at Ironhack's full stack web development bootcamp, where I
+            worked with technologies such as
             <span className="font-semibold text-highlight">
               {" "}
-              JavaScript, React, Node.js, Express,
+              JavaScript, React, Node.js, Express
             </span>{" "}
-            and
-            <span className="font-semibold text-highlight"> MongoDB</span>.
-            During this training, I learned how to develop complete web
-            applications, covering both the frontend and backend.
+            and<span className="font-semibold text-highlight"> MongoDB</span>. I
+            also manage my own server using
+            <span className="font-semibold text-highlight">
+              {" "}
+              Docker, Cloudflare
+            </span>{" "}
+            and <span className="font-semibold text-highlight">systemd</span>,
+            which has allowed me to deploy real projects.
+            <br />
+            <br />I am currently studying the{" "}
+            <span className="font-semibold text-highlight">
+              Multiplatform Application Development (DAM)
+            </span>{" "}
+            program to strengthen my skills in advanced programming and software
+            architecture.
           </>
         )}
       </motion.p>

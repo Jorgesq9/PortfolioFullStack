@@ -1,6 +1,7 @@
 export const projectsData = [
   {
     id: 1,
+    category: "juegos",
     title_es: "Brick Breaker",
     title_en: "Brick Breaker",
     description_es:
@@ -27,6 +28,7 @@ export const projectsData = [
   },
   {
     id: 2,
+    category: "fullstack",
     title_en: "Booking Management System",
     title_es: "Sistema de Gestión de Reservas",
     description_en:
@@ -66,6 +68,7 @@ export const projectsData = [
   },
   {
     id: 3,
+    category: "juegos",
     title_es: "Tetris",
     title_en: "Tetris",
     description_es: "Versión clásica de Tetris con JavaScript puro y Vite",
@@ -91,12 +94,11 @@ export const projectsData = [
   },
   {
     id: 4,
+    category: "backend",
     title_es: "Servidor Casero Autogestionado",
     title_en: "Self-Hosted Home Server",
-    description_es:
-      "Servidor personal configurado con túneles Cloudflare para alojar todos mis proyectos de forma segura y gratuita.",
-    description_en:
-      "Personal server configured with Cloudflare Tunnels to securely and freely host all my projects.",
+    description_es: "Servidor personal configurado con túneles Cloudflare",
+    description_en: "Personal server configured with Cloudflare Tunnels",
     tech: ["Cloudflare Tunnel", "Linux", "Systemd", "Nginx", "Docker", "PM2"],
     features_es: [
       "Alojamiento autogestionado en mini PC",
@@ -112,6 +114,8 @@ export const projectsData = [
       "Separate tunnels for each project",
       "Subdomain routing using Cloudflare-managed DNS records",
     ],
-    links: {},
+    links: {
+      code: "https://github.com/Jorgesq9/Home-Server",
+    },
   },
 ];

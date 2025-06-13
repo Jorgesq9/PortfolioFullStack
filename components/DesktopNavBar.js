@@ -1,6 +1,23 @@
-import { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 const DesktopNavBar = ({ toggleLanguage, isEnglish }) => {
+  const [cvMenuOpen, setCvMenuOpen] = useState(false);
+  const cvMenuRef = useRef(null);
+
+  // Cierra el menú si haces clic fuera de él
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (cvMenuRef.current && !cvMenuRef.current.contains(event.target)) {
+        setCvMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <nav className="fixed top-0 left-0 w-full bg-navbar text-white h-20 px-8 flex justify-between items-center z-50 shadow-lg">
       <div className="flex items-center">
@@ -26,13 +43,33 @@ const DesktopNavBar = ({ toggleLanguage, isEnglish }) => {
           <img src="/github.png" alt="GitHub" className="w-10 h-10" />
         </a>
 
-        <a
-          href="/cv.pdf"
-          download="CV_Jorge_Esquiva.pdf"
-          className="hover:text-[var(--link-hover)] transition-all"
-        >
-          <img src="/cv-icon.png" alt="Descargar CV" className="w-10 h-10" />
-        </a>
+        <div className="relative" ref={cvMenuRef}>
+          <button
+            onClick={() => setCvMenuOpen(!cvMenuOpen)}
+            className="hover:text-[var(--link-hover)] transition-all"
+          >
+            <img src="/cv-icon.png" alt="Descargar CV" className="w-10 h-10" />
+          </button>
+
+          {cvMenuOpen && (
+            <div className="absolute top-12 left-0 rounded shadow-lg py-2 z-50 w-40 bg-[#162842] text-white">
+              <a
+                href="/cv-es.pdf"
+                download="CV_Jorge_Esquiva_ES.pdf"
+                className="block px-4 py-2 hover:bg-opacity-90"
+              >
+                CV en Español
+              </a>
+              <a
+                href="/cv-en.pdf"
+                download="CV_Jorge_Esquiva_EN.pdf"
+                className="block px-4 py-2 hover:bg-opacity-90"
+              >
+                CV in English
+              </a>
+            </div>
+          )}
+        </div>
       </div>
 
       <div className="flex space-x-8 text-lg">

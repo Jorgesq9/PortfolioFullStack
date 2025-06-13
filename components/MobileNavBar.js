@@ -58,12 +58,21 @@ const MobileNavbar = ({ toggleLanguage, isEnglish }) => {
             GitHub
           </a>
           <a
-            href="/cv.pdf"
-            download="CV_Jorge_Esquiva.pdf"
+            href="/cv-es.pdf"
+            download="CV_Jorge_Esquiva_ES.pdf"
             className="hover:text-[var(--link-hover)] transition-all"
             onClick={handleLinkClick}
           >
-            Descargar CV
+            Descargar CV (ES)
+          </a>
+
+          <a
+            href="/cv-en.pdf"
+            download="CV_Jorge_Esquiva_EN.pdf"
+            className="hover:text-[var(--link-hover)] transition-all"
+            onClick={handleLinkClick}
+          >
+            Download CV (EN)
           </a>
           <button
             onClick={() => {
