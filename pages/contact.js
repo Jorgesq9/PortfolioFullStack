@@ -52,16 +52,12 @@ const Contact = ({ language }) => {
     <motion.section
       id="contact"
       className="min-h-screen flex flex-col justify-center items-center px-4 sm:px-8 pt-6 sm:pt-10 bg-background text-textLight snap-start"
-      initial={{ opacity: 0, scale: 0.8 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: false, amount: 0.3 }}
-      transition={{ duration: 1.2, ease: "easeOut" }}
     >
       <motion.h2
         className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-center leading-tight"
         style={{ color: "#C29B39" }}
-        initial={{ opacity: 0, y: -50 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
         {language === "es" ? "Contáctame" : "Contact Me"}
@@ -71,8 +67,7 @@ const Contact = ({ language }) => {
         className="text-center text-lg mb-6"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.3, duration: 0.8 }}
+        transition={{ delay: 0.4, duration: 0.8 }}
       >
         {language === "es" ? "Puedes escribirme a" : "You can reach me at"}{" "}
         <a
@@ -87,10 +82,9 @@ const Contact = ({ language }) => {
         <motion.form
           onSubmit={handleSubmit}
           className="bg-gray-800 p-6 sm:p-8 rounded-lg shadow-lg w-full max-w-md sm:max-w-lg"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1.2, delay: 0.8 }}
         >
           <div className="mb-3 sm:mb-4">
             <label className="block text-gray-300 mb-1 sm:mb-2">

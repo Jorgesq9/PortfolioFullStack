@@ -140,3 +140,23 @@ nav {
     font-size: 12px !important;
   }
 }
+
+@media (max-width: 415px), (max-height: 850px) {
+  .hide-tech-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .center-vertical-tablet {
+    justify-content: center !important;
+  }
+  .mt-tablet-zero {
+    margin-top: 0 !important;
+  }
+}
+@media (min-width: 1024px) {
+  .mt-title-pc {
+    margin-top: 6rem !important; /* mt-24 */
+  }
+}

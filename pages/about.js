@@ -5,16 +5,16 @@ const About = ({ language }) => {
     <motion.section
       id="about"
       className="min-h-screen flex flex-col justify-center items-center px-8 snap-start overflow-hidden"
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
       viewport={{ once: false, amount: 0.3 }}
       transition={{ duration: 1.2, ease: "easeOut" }}
     >
       <motion.h1
         className="text-3xl sm:text-4xl md:text-5xl font-bold mb-10 text-center leading-tight"
         style={{ color: "#C29B39" }}
-        initial={{ opacity: 0, y: -50 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
         viewport={{ once: false }}
         transition={{ duration: 0.7, delay: 0.3 }}
       >
@@ -35,8 +35,8 @@ const About = ({ language }) => {
 
       <motion.p
         className="text-md max-w-2xl text-center mb-8"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
         viewport={{ once: false }}
         transition={{ duration: 0.9, delay: 1.0 }}
       >

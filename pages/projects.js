@@ -26,29 +26,24 @@ const Projects = ({ language }) => {
   return (
     <motion.section
       id="projects"
-      className="h-screen flex flex-col px-6 md:px-12 bg-background text-textLight snap-start"
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: false, amount: 0.3 }}
-      transition={{ duration: 1.2, ease: "easeOut" }}
+      className="h-screen flex flex-col justify-start px-6 md:px-12 bg-background text-textLight snap-start center-vertical-tablet"
     >
       {/* TÍTULO */}
       <motion.h2
-        className="flex-shrink-0 text-3xl sm:text-4xl font-bold text-center mt-8 sm:mt-24 mb-4 sm:mb-8 text-[#C29B39]"
+        className="flex-shrink-0 text-4xl font-bold text-center mt-36 mb-8 text-[#C29B39] mt-title-tablet"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.7, delay: 0.8 }}
       >
         {language === "es" ? "Mis Proyectos" : "My Projects"}
       </motion.h2>
 
       {/* BOTONES */}
       <motion.div
-        className="flex-shrink-0 flex justify-center gap-2 sm:gap-4 mb-4 sm:mb-6 flex-wrap"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 0.2 }}
-        viewport={{ once: true }}
+        className="flex-shrink-0 flex justify-center gap-4 mb-6 flex-wrap"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.9, delay: 0.4 }}
       >
         {categories.map((cat) => (
           <button
@@ -67,8 +62,8 @@ const Projects = ({ language }) => {
       </motion.div>
 
       {/* CONTENIDO CENTRAL OCUPA ESPACIO RESTANTE */}
-      <div className="w-full flex justify-center flex-1 pb-4 sm:pb-8 mt-2 sm:mt-8">
-        <div className="w-full max-w-2xl h-auto sm:h-[60vh] flex items-start">
+      <div className="w-full flex justify-center flex-1 pb-8 mt-4">
+        <div className="w-full max-w-2xl md:max-w-3xl lg:max-w-2xl h-[60vh] flex items-start">
           <AnimatePresence mode="wait">
             <Swiper
               key={activeCategory}
@@ -83,9 +78,9 @@ const Projects = ({ language }) => {
                 >
                   <motion.div
                     className="w-full max-w-xl bg-gray-800 rounded-xl p-6 shadow-2xl hover:shadow-gold/20 transition-shadow overflow-y-auto flex flex-col justify-center mx-auto h-full"
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -20 }}
-                    transition={{ duration: 0.4 }}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 0.6 }}
                   >
                     {/* Cabecera */}
                     <div className="text-center mb-6">
@@ -118,7 +113,7 @@ const Projects = ({ language }) => {
                     </div>
 
                     {/* Tecnologías */}
-                    <div className="flex flex-wrap justify-center gap-2 mb-6">
+                    <div className="flex flex-wrap justify-center gap-2 mb-6 hide-tech-mobile">
                       {project.tech?.map((tech) => (
                         <span
                           key={tech}
