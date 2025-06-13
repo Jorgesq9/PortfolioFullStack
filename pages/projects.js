@@ -77,7 +77,7 @@ const Projects = ({ language }) => {
                   className="flex items-center justify-center h-full"
                 >
                   <motion.div
-                    className="w-full max-w-xl bg-gray-800 rounded-xl p-3 md:p-6 shadow-2xl transition-shadow overflow-y-auto flex flex-col justify-between mx-auto h-[50vh] sm:h-[60vh]"
+                    className="w-full max-w-xl bg-gray-800 rounded-xl p-3 md:p-6 shadow-2xl transition-shadow overflow-y-auto flex flex-col justify-between mx-auto h-[50vh] sm:h-[60vh] "
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 0.6 }}
@@ -99,7 +99,7 @@ const Projects = ({ language }) => {
                     {/* Características */}
                     <div className="mb-6 w-full">
                       <div className="max-w-md mx-auto">
-                        <ul className="list-disc pl-8 pr-2 space-y-2">
+                        <ul className="list-disc pl-6 md:pl-24 pr-2 space-y-2 text-left">
                           {(language === "es"
                             ? project.features_es || []
                             : project.features_en || []
@@ -113,7 +113,7 @@ const Projects = ({ language }) => {
                     </div>
 
                     {/* Tecnologías */}
-                    <div className="flex flex-nowrap overflow-x-auto gap-2 mb-4">
+                    <div className="flex flex-nowrap overflow-x-auto gap-2 mb-4 text-center">
                       {project.tech?.map((tech) => (
                         <span
                           key={tech}
