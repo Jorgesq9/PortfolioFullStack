@@ -75,8 +75,8 @@ export const projectsData = [
     images: ["/Front-End.png"],
     links: {
       demo: "http://centralreservas.jorgeesquivafullstack.es/login",
-      code_api: "https://github.com/Jorgesq9/Central-Reservas-BackEnd",
-      code_frontend: "https://github.com/Jorgesq9/Central-reservas",
+      code_api: "https://github.com/Jorgesq9/Reservas-Back",
+      code_frontend: "https://github.com/Jorgesq9/Reservas-Front",
       docs: "https://api.jorgeesquivafullstack.es/api-docs/", // URL de Swagger
     },
   },
