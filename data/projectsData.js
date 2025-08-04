@@ -1,5 +1,53 @@
 export const projectsData = [
   {
+    id: "mendix-issue-tracker",
+    category: "mendix",
+    title_es: "Issue Tracker (Mendix)",
+    title_en: "Issue Tracker (Mendix)",
+    description_es:
+      "Aplicación de gestión de incidencias multi-rol con dashboards y chat interno, desarrollada con Mendix.",
+    description_en:
+      "Multi-role issue tracking app with dashboards and internal chat, built with Mendix.",
+    features_es: [
+      "Acceso por roles: Employee, Supervisor, Technician",
+      "Dashboard visual de incidencias por estado",
+      "Chat interno por incidencia",
+      "Gestión de cuentas de usuario (alta, edición, borrado)",
+      "UI responsive y demo online",
+    ],
+    features_en: [
+      "Role-based access: Employee, Supervisor, Technician",
+      "Visual dashboard by status",
+      "Internal chat per incident",
+      "User account management (create, edit, delete)",
+      "Responsive UI and online demo",
+    ],
+    tech: [
+      "Mendix",
+      "Low-code",
+      "Security",
+      "Cloud deployment",
+      "CSS",
+      "JS",
+      "GitHub",
+    ],
+    links: {
+      demo: "https://trackerissue-sandbox.mxapps.io/index.html?profile=Responsive",
+      documentation: "https://github.com/Jorgesq9/IssueTracker-Mendix-",
+    },
+    credentials_es: [
+      "Supervisor: supervisor / 1234",
+      "Technician: technician / 1234",
+      "Employee: employee / 1234",
+    ],
+    credentials_en: [
+      "Supervisor: supervisor / 1234",
+      "Technician: technician / 1234",
+      "Employee: employee / 1234",
+    ],
+  },
+
+  {
     id: 1,
     category: "juegos",
     title_es: "Array.Tris()",

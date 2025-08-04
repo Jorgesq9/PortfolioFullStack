@@ -10,6 +10,10 @@ import { motion, AnimatePresence } from "framer-motion";
 const Projects = ({ language }) => {
   const categories = [
     {
+      id: "mendix",
+      title: language === "es" ? "Proyectos Mendix" : "Mendix Projects",
+    },
+    {
       id: "fullstack",
       title: language === "es" ? "Proyectos Full Stack" : "Full Stack Projects",
     },
@@ -137,6 +141,20 @@ const Projects = ({ language }) => {
                           {language === "es"
                             ? "Demo Frontend"
                             : "Frontend Demo"}
+                        </Link>
+                      )}
+
+                      {project.links?.documentation && (
+                        <Link
+                          href={project.links.documentation}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-lg flex items-center gap-2 text-sm"
+                        >
+                          <span>📚</span>
+                          {language === "es"
+                            ? "Documentación"
+                            : "Documentation"}
                         </Link>
                       )}
 
