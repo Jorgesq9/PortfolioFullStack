@@ -10,6 +10,10 @@ import { motion, AnimatePresence } from "framer-motion";
 const Projects = ({ language }) => {
   const categories = [
     {
+      id: "backend",
+      title: language === "es" ? "Api's / Servidores" : "Api's / Servers",
+    },
+    {
       id: "mendix",
       title: language === "es" ? "Proyectos Mendix" : "Mendix Projects",
     },
@@ -18,10 +22,6 @@ const Projects = ({ language }) => {
       title: language === "es" ? "Proyectos Full Stack" : "Full Stack Projects",
     },
     { id: "juegos", title: language === "es" ? "Juegos Web" : "Web Games" },
-    {
-      id: "backend",
-      title: language === "es" ? "Backend / Servidores" : "Backend / Servers",
-    },
   ];
 
   const [activeCategory, setActiveCategory] = useState(categories[0].id);
@@ -166,7 +166,7 @@ const Projects = ({ language }) => {
                           className="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-lg flex items-center gap-2 text-sm"
                         >
                           <span>📚</span>
-                          API Docs
+                          {language === "es" ? "Documentación API" : "API Docs"}
                         </Link>
                       )}
 
@@ -175,7 +175,7 @@ const Projects = ({ language }) => {
                           href={project.links.code_api}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg flex items-center gap-2 text-sm"
+                          className="bg-[#C29B39] hover:bg-[#ae8a34] text-white px-4 py-2 rounded-lg flex items-center gap-2 text-sm"
                         >
                           <span>🔑</span>
                           {language === "es" ? "Código API" : "API Code"}
@@ -187,7 +187,7 @@ const Projects = ({ language }) => {
                           href={project.links.code_frontend}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg flex items-center gap-2 text-sm"
+                          className="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-lg flex items-center gap-2 text-sm"
                         >
                           <span>🖥️</span>
                           {language === "es"

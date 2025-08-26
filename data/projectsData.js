@@ -125,7 +125,7 @@ export const projectsData = [
       demo: "http://centralreservas.jorgeesquivafullstack.es/login",
       code_api: "https://github.com/Jorgesq9/Reservas-Back",
       code_frontend: "https://github.com/Jorgesq9/Reservas-Front",
-      docs: "https://api.jorgeesquivafullstack.es/api-docs/", // URL de Swagger
+      docs: "https://api.jorgeesquivafullstack.es/api-docs/", // Swagger docs link
     },
   },
 
@@ -173,11 +173,55 @@ export const projectsData = [
   {
     id: 4,
     category: "backend",
+    title_es: "API de Ventas y Reservas",
+    title_en: "Sales & Reservations API",
+    description_es: "API para gestión de ventas y reservas",
+    description_en: " API for sales and bookings management",
+    tech: [
+      "Node.js",
+      "Express",
+      "JS",
+      "Prisma ORM",
+      "PostgreSQL",
+      "Swagger",
+      "Docker",
+    ],
+    features_es: [
+      "Endpoints REST para ventas y reservas",
+      "Generación automática de la base de datos con Prisma",
+      "Migraciones y schema gestionados con Prisma Migrate",
+      "Documentación interactiva con Swagger",
+      "Despliegue en servidor autogestionado con túneles Cloudflare",
+    ],
+    features_en: [
+      "REST endpoints for sales and booking management",
+      "Database schema generation with Prisma",
+      "Migrations handled via Prisma Migrate",
+      "Interactive Swagger API documentation",
+      "Deployment on self-hosted server with Cloudflare tunnels",
+    ],
+    links: {
+      docs: "https://apinode.jorgeesquivafullstack.es/docs",
+      code_api: "https://github.com/Jorgesq9/sales-reservations-api-node", // ajusta si tu repo se llama distinto
+    },
+  },
+
+  {
+    id: 5,
+    category: "backend",
     title_es: "Servidor Casero Autogestionado",
     title_en: "Self-Hosted Home Server",
     description_es: "Servidor personal configurado con túneles Cloudflare",
     description_en: "Personal server configured with Cloudflare Tunnels",
-    tech: ["Cloudflare Tunnel", "Linux", "Systemd", "Nginx", "Docker", "PM2"],
+    tech: [
+      "Cloudflare Tunnel",
+      "Linux",
+      "Systemd",
+      "Nginx",
+      "Docker",
+      "PM2",
+      "DNS",
+    ],
     features_es: [
       "Alojamiento autogestionado en mini PC",
       "Certificados SSL automáticos mediante Cloudflare",

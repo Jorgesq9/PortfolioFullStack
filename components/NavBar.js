@@ -8,7 +8,7 @@ const Navbar = ({ setLanguage }) => {
   const toggleLanguage = () => {
     setIsEnglish(!isEnglish);
     if (setLanguage) {
-      setLanguage(isEnglish ? "es" : "en");
+      setLanguage(isEnglish ? "en" : "es");
     } else {
       console.warn("setLanguage no está definido");
     }

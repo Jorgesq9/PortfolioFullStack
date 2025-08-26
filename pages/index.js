@@ -5,7 +5,7 @@ import Projects from "./projects";
 import Contact from "./contact";
 
 const Home = () => {
-  const [language, setLanguage] = useState("es");
+  const [language, setLanguage] = useState("en");
   const [animate, setAnimate] = useState(false);
 
   return (

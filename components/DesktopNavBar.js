@@ -87,8 +87,8 @@ const DesktopNavBar = ({ toggleLanguage, isEnglish }) => {
         </a>
         <button onClick={toggleLanguage} className="transition-all">
           <img
-            src={isEnglish ? "/spain-flag.png" : "/uk-flag.png"}
-            alt={isEnglish ? "Español" : "English"}
+            src={isEnglish ? "/uk-flag.png" : "/spain-flag.png"}
+            alt={isEnglish ? "English" : "Español"}
             className="w-8 h-6 rounded-lg flag-btn"
           />
         </button>
