@@ -65,7 +65,7 @@ const Projects = ({ language }) => {
         ))}
       </motion.div>
 
-      {/* CONTENIDO CENTRAL OCUPA ESPACIO RESTANTE */}
+      {/* CONTENIDO CENTRAL */}
       <div className="w-full flex justify-center flex-1 pb-8 mt-4">
         <div className="w-full max-w-2xl md:max-w-3xl lg:max-w-2xl flex items-center">
           <AnimatePresence mode="wait">
@@ -74,14 +74,15 @@ const Projects = ({ language }) => {
               modules={[Navigation]}
               navigation
               slidesPerView={1}
+              autoHeight
             >
               {filtered.map((project) => (
                 <SwiperSlide
                   key={project.id}
-                  className="flex items-center justify-center h-full"
+                  className="flex items-center justify-center !h-auto"
                 >
                   <motion.div
-                    className="w-full max-w-xl bg-gray-800 rounded-xl p-3 md:p-6 shadow-2xl transition-shadow overflow-y-auto flex flex-col justify-between mx-auto h-[50vh] sm:h-[60vh] "
+                    className="w-full max-w-xl bg-gray-800 rounded-xl p-3 md:p-6 shadow-2xl transition-shadow flex flex-col justify-between mx-auto h-auto min-h-[420px] overflow-visible"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 0.6 }}
