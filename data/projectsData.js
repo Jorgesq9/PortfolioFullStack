@@ -170,8 +170,50 @@ export const projectsData = [
       code_frontend: "https://github.com/Jorgesq9/BrickBattle",
     },
   },
+
   {
     id: 4,
+    category: "backend",
+    title_es: "API de Reservas (AWS & Servidor propio)",
+    title_en: "Booking API (AWS & Self-hosted)",
+    description_es:
+      "API REST para la gestión de reservas con control de roles y despliegue en AWS y servidor propio",
+    description_en:
+      "REST API for booking management with role-based access control, deployed on AWS and self-hosted server",
+    tech: [
+      "JWT Auth",
+      "AtlasDB",
+      "Swagger",
+      "Docker",
+      "Nginx",
+      "AWS EC2",
+      "Cloudflare",
+    ],
+    features_es: [
+      "CRUD de reservas y usuarios",
+      "Autenticación JWT y control de roles (Admin/Worker)",
+      "Base de datos MongoDB con índices optimizados",
+      "Documentación interactiva con Swagger",
+      "Despliegue en servidor propio con Docker + Cloudflare + systemd",
+      "Despliegue en AWS EC2 con Nginx, Certbot SSL, UFW y Security Groups",
+    ],
+    features_en: [
+      "CRUD for bookings and users",
+      "JWT authentication and role-based access (Admin/Worker)",
+      "MongoDB database with optimized indexes",
+      "Interactive Swagger API documentation",
+      "Deployment on self-hosted server using Docker + Cloudflare + systemd",
+      "Deployment on AWS EC2 with Nginx, Certbot SSL, UFW and Security Groups",
+    ],
+    links: {
+      live_aws: "https://apiaws.jorgeesquivafullstack.es",
+      live_self: "https://api.jorgeesquivafullstack.es/",
+      docs: "https://apiaws.jorgeesquivafullstack.es/api-docs/",
+      code_api: "https://github.com/Jorgesq9/Reservas-Back",
+    },
+  },
+  {
+    id: 5,
     category: "backend",
     title_es: "API de Ventas y Reservas",
     title_en: "Sales & Reservations API",
@@ -207,7 +249,7 @@ export const projectsData = [
   },
 
   {
-    id: 5,
+    id: 6,
     category: "backend",
     title_es: "Servidor Casero Autogestionado",
     title_en: "Self-Hosted Home Server",

@@ -29,7 +29,7 @@ const About = ({ language }) => {
         transition={{ duration: 0.7, delay: 0.3 }}
       >
         {language === "es"
-          ? "Desarrollador web full stack con enfoque en backend y despliegue."
+          ? "Desarrollador web full stack con un fuerte enfoque en backend y despliegue."
           : "I'm a full-stack web developer with a strong focus on backend and deployment."}
       </motion.p>
 
@@ -47,23 +47,24 @@ const About = ({ language }) => {
             <span className="font-semibold text-highlight">
               {" "}
               JavaScript, React, Node.js, Express
-            </span>{" "}
-            y<span className="font-semibold text-highlight"> MongoDB</span>.
-            Además, gestiono mi propio servidor con
+            </span>
+            y <span className="font-semibold text-highlight">MongoDB</span>.
+            Además, gestiono mi propio servidor y despliego en
+            <span className="font-semibold text-highlight"> AWS EC2</span>,
+            utilizando{" "}
             <span className="font-semibold text-highlight">
-              {" "}
-              Docker, Cloudflare
-            </span>{" "}
-            y <span className="font-semibold text-highlight">systemd</span>, lo
-            que me ha permitido desplegar proyectos reales.
+              Docker, Nginx, Cloudflare y
+            </span>
+            <span className="font-semibold text-highlight"> systemd</span>, lo
+            que me ha permitido llevar proyectos reales a producción.
             <br />
             <br />
-            Actualmente estudio el ciclo superior de{" "}
+            Actualmente curso el ciclo superior de{" "}
             <span className="font-semibold text-highlight">
-              Desarrollo de Aplicaciones Multiplataforma (DAM)
+              Administración de Sistemas Informáticos en Red (ASIR)
             </span>{" "}
-            para reforzar mis conocimientos en programación avanzada y
-            arquitectura de software.
+            para reforzar mis conocimientos en administración de sistemas,
+            redes, virtualización y cloud computing.
           </>
         ) : (
           <>
@@ -72,22 +73,23 @@ const About = ({ language }) => {
             <span className="font-semibold text-highlight">
               {" "}
               JavaScript, React, Node.js, Express
-            </span>{" "}
-            and<span className="font-semibold text-highlight"> MongoDB</span>. I
-            also manage my own server using
+            </span>
+            and <span className="font-semibold text-highlight">MongoDB</span>. I
+            also manage my own server and deploy projects on
+            <span className="font-semibold text-highlight"> AWS EC2</span>,
+            using{" "}
             <span className="font-semibold text-highlight">
-              {" "}
-              Docker, Cloudflare
-            </span>{" "}
-            and <span className="font-semibold text-highlight">systemd</span>,
-            which has allowed me to deploy real projects.
+              Docker, Nginx, Cloudflare and
+            </span>
+            <span className="font-semibold text-highlight"> systemd</span>,
+            which has allowed me to bring real projects into production.
             <br />
-            <br />I am currently studying the{" "}
+            <br />I am currently studying{" "}
             <span className="font-semibold text-highlight">
-              Multiplatform Application Development (DAM)
+              Advanced Training in Networked Computer Systems Administration
             </span>{" "}
-            program to strengthen my skills in advanced programming and software
-            architecture.
+            to strengthen my skills in system administration, networking,
+            virtualization and cloud computing.
           </>
         )}
       </motion.p>
