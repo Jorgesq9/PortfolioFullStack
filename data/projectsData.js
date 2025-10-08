@@ -190,7 +190,6 @@ export const projectsData = [
       "Cloudflare",
     ],
     features_es: [
-      "CRUD de reservas y usuarios",
       "Autenticación JWT y control de roles (Admin/Worker)",
       "Base de datos MongoDB con índices optimizados",
       "Documentación interactiva con Swagger",
@@ -198,7 +197,6 @@ export const projectsData = [
       "Despliegue en AWS EC2 con Nginx, Certbot SSL, UFW y Security Groups",
     ],
     features_en: [
-      "CRUD for bookings and users",
       "JWT authentication and role-based access (Admin/Worker)",
       "MongoDB database with optimized indexes",
       "Interactive Swagger API documentation",
