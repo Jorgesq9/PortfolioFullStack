@@ -54,18 +54,20 @@ const DesktopNavBar = ({ toggleLanguage, isEnglish }) => {
           {cvMenuOpen && (
             <div className="absolute top-12 left-0 rounded shadow-lg py-2 z-50 w-40 bg-[#162842] text-white">
               <a
-                href="/cv-es.pdf"
-                download="CV_Jorge_Esquiva_ES.pdf"
+                href="/cv-es.html"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block px-4 py-2 hover:bg-opacity-90"
               >
-                CV en Español
+                Español CV
               </a>
               <a
-                href="/cv-en.pdf"
-                download="CV_Jorge_Esquiva_EN.pdf"
+                href="/cv-en.html"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block px-4 py-2 hover:bg-opacity-90"
               >
-                CV in English
+                English CV
               </a>
             </div>
           )}
