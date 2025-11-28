@@ -358,6 +358,7 @@
             </div>
           </section>
 
+          <!-- PROYECTOS DESTACADOS ACTUALIZADOS -->
           <section class="panel">
             <h3 class="section-title">
               <svg viewBox="0 0 24 24" fill="none">
@@ -374,6 +375,30 @@
               </svg>
               Proyectos Destacados
             </h3>
+
+            <div class="item">
+              <div class="role">
+                <b>Entorno de Staging en VMware</b>
+                <span class="muted">· Ubuntu Server · Docker · Nginx</span>
+              </div>
+              <ul class="bullets">
+                <li>
+                  <b>Home Lab profesional</b> sobre Ubuntu Server 24.04 en
+                  VMware Workstation, simulando un servidor de producción real.
+                </li>
+                <li>
+                  Arquitectura unificada en <b>/srv</b> con Docker Compose,
+                  Nginx reverse proxy, Portainer, Uptime Kuma,
+                  <b>logrotate</b> y scripts de backup automático.
+                </li>
+                <li>
+                  Usado como entorno de <b>staging</b> para probar despliegues y
+                  migraciones antes de mover servicios a servidor físico o
+                  cloud.
+                </li>
+              </ul>
+            </div>
+
             <div class="item">
               <div class="role">
                 <b>Central de Reservas (Frontend + API)</b>
@@ -381,33 +406,20 @@
               </div>
               <ul class="bullets">
                 <li>
-                  Autenticación JWT por roles (Admin/Worker) y panel en React.
+                  Autenticación JWT por roles (Admin/Worker) y panel de gestión
+                  en React para reservas y usuarios.
                 </li>
                 <li>
-                  API documentada con Swagger; MongoDB optimizada con índices.
+                  API documentada con Swagger; base de datos MongoDB optimizada
+                  con índices para uso real.
                 </li>
                 <li>
-                  Despliegue en AWS EC2 y servidor propio con Docker + Nginx +
-                  Certbot + UFW.
-                </li>
-                <li class="links">
-                  🔗
-                  <a
-                    href="https://centralreservas.jorgeesquivafullstack.es/login"
-                    target="_blank"
-                    rel="noopener"
-                    >Frontend</a
-                  >
-                  ·
-                  <a
-                    href="https://apiaws.jorgeesquivafullstack.es/api-docs/"
-                    target="_blank"
-                    rel="noopener"
-                    >API Docs</a
-                  >
+                  Despliegue en <b>AWS EC2</b> y servidor propio usando Docker,
+                  Nginx como reverse proxy, Certbot SSL y UFW.
                 </li>
               </ul>
             </div>
+
             <div class="item">
               <div class="role">
                 <b>Sales & Reservations API</b>
@@ -415,42 +427,12 @@
               </div>
               <ul class="bullets">
                 <li>
-                  REST con <b>Express + Prisma ORM</b>, migraciones con Prisma
-                  Migrate y Swagger.
+                  API REST con <b>Express + Prisma ORM</b>, migraciones con
+                  Prisma Migrate y documentación Swagger.
                 </li>
                 <li>
-                  Despliegue Docker y exposición segura con Cloudflare Tunnel.
-                </li>
-                <li class="links">
-                  🔗
-                  <a
-                    href="https://apinode.jorgeesquivafullstack.es/docs/"
-                    target="_blank"
-                    rel="noopener"
-                    >Docs</a
-                  >
-                  ·
-                  <a
-                    href="https://github.com/Jorgesq9/sales-reservations-api-node"
-                    target="_blank"
-                    rel="noopener"
-                    >GitHub</a
-                  >
-                </li>
-              </ul>
-            </div>
-            <div class="item">
-              <div class="role">
-                <b>Servidor Personal Autogestionado</b>
-                <span class="muted">· Linux + Docker + Cloudflare</span>
-              </div>
-              <ul class="bullets">
-                <li>
-                  Hosting multi-servicio con subdominios y SSL automático.
-                </li>
-                <li>
-                  Servicios persistentes con systemd/PM2; reverse proxy con
-                  Nginx.
+                  Despliegue Dockerizado y exposición segura con Cloudflare
+                  Tunnel.
                 </li>
               </ul>
             </div>

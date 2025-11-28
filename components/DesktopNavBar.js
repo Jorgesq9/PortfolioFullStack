@@ -59,7 +59,7 @@ const DesktopNavBar = ({ toggleLanguage, isEnglish }) => {
                 rel="noopener noreferrer"
                 className="block px-4 py-2 hover:bg-opacity-90"
               >
-                Español CV
+                CV Español
               </a>
               <a
                 href="/cv-en.html"
@@ -67,7 +67,7 @@ const DesktopNavBar = ({ toggleLanguage, isEnglish }) => {
                 rel="noopener noreferrer"
                 className="block px-4 py-2 hover:bg-opacity-90"
               >
-                English CV
+                CV English
               </a>
             </div>
           )}

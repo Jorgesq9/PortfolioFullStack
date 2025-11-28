@@ -10,18 +10,30 @@ import { motion, AnimatePresence } from "framer-motion";
 const Projects = ({ language }) => {
   const categories = [
     {
+      id: "devops",
+      title:
+        language === "es"
+          ? "DevOps e Infraestructura"
+          : "DevOps & Infrastructure",
+    },
+    {
       id: "backend",
-      title: language === "es" ? "Api's / Servidores" : "Api's / Servers",
+      title: language === "es" ? "Backend & APIs" : "Backend & APIs",
+    },
+    {
+      id: "migrations",
+      title:
+        language === "es"
+          ? "Migraciones de Infraestructura"
+          : "Infra Migrations",
     },
     {
       id: "mendix",
-      title: language === "es" ? "Proyectos Mendix" : "Mendix Projects",
+      title:
+        language === "es"
+          ? "Proyectos Mendix (Low-code)"
+          : "Mendix (Low-code) Projects",
     },
-    {
-      id: "fullstack",
-      title: language === "es" ? "Proyectos Full Stack" : "Full Stack Projects",
-    },
-    { id: "juegos", title: language === "es" ? "Juegos Web" : "Web Games" },
   ];
 
   const [activeCategory, setActiveCategory] = useState(categories[0].id);
@@ -30,11 +42,12 @@ const Projects = ({ language }) => {
   return (
     <motion.section
       id="projects"
-      className="h-screen flex flex-col justify-center items-center px-6 md:px-12 bg-background text-textLight snap-start py-10"
+      // En móvil: min-h-screen; en desktop: pantalla completa
+      className="min-h-screen md:h-screen flex flex-col justify-center items-center px-4 sm:px-6 md:px-12 bg-background text-textLight snap-start py-16 md:py-10"
     >
       {/* TÍTULO */}
       <motion.h2
-        className="flex-shrink-0 text-4xl font-bold text-center mt-36 mb-8 text-[#C29B39] mt-title-tablet"
+        className="flex-shrink-0 text-3xl md:text-4xl font-bold text-center mt-20 md:mt-32 mb-6 md:mb-8 text-[#C29B39]"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.7, delay: 0.8 }}
@@ -44,7 +57,7 @@ const Projects = ({ language }) => {
 
       {/* BOTONES */}
       <motion.div
-        className="flex-shrink-0 flex justify-center gap-4 mb-6 flex-wrap"
+        className="flex-shrink-0 flex justify-center gap-2 sm:gap-4 mb-6 flex-wrap"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.9, delay: 0.4 }}
@@ -53,7 +66,7 @@ const Projects = ({ language }) => {
           <button
             key={cat.id}
             onClick={() => setActiveCategory(cat.id)}
-            className={`px-4 py-2 rounded-full text-sm font-semibold transition 
+            className={`px-3 py-2 rounded-full text-xs sm:text-sm font-semibold transition 
             ${
               activeCategory === cat.id
                 ? "bg-[#C29B39] text-white"
@@ -66,8 +79,8 @@ const Projects = ({ language }) => {
       </motion.div>
 
       {/* CONTENIDO CENTRAL */}
-      <div className="w-full flex justify-center flex-1 pb-8 mt-4">
-        <div className="w-full max-w-2xl md:max-w-3xl lg:max-w-2xl flex items-center">
+      <div className="w-full flex justify-center flex-1 pb-6 md:pb-8 mt-2 md:mt-4">
+        <div className="w-full max-w-md sm:max-w-lg md:max-w-3xl flex items-center">
           <AnimatePresence mode="wait">
             <Swiper
               key={activeCategory}
@@ -82,19 +95,19 @@ const Projects = ({ language }) => {
                   className="flex items-center justify-center !h-auto"
                 >
                   <motion.div
-                    className="w-full max-w-xl bg-gray-800 rounded-xl p-3 md:p-6 shadow-2xl transition-shadow flex flex-col justify-between mx-auto h-auto min-h-[420px] overflow-visible"
+                    className="w-full max-w-md sm:max-w-lg bg-gray-800 rounded-xl p-4 md:p-6 shadow-2xl transition-shadow flex flex-col justify-between mx-auto h-auto min-h-[360px] md:min-h-[420px] overflow-visible"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 0.6 }}
                   >
                     {/* Cabecera */}
-                    <div className="text-center mb-6">
-                      <h3 className="text-2xl font-bold mb-3 text-[#C29B39]">
+                    <div className="text-center mb-4 md:mb-6">
+                      <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-3 text-[#C29B39]">
                         {language === "es"
                           ? project.title_es
                           : project.title_en}
                       </h3>
-                      <p className="text-gray-300">
+                      <p className="text-gray-300 text-sm md:text-base">
                         {language === "es"
                           ? project.description_es
                           : project.description_en}
@@ -102,14 +115,17 @@ const Projects = ({ language }) => {
                     </div>
 
                     {/* Características */}
-                    <div className="mb-6 w-full">
-                      <div className="max-w-md mx-auto">
-                        <ul className="list-disc pl-6 md:pl-24 pr-2 space-y-2 text-left">
+                    <div className="mb-4 md:mb-6 w-full">
+                      <div className="max-w-full mx-auto">
+                        <ul className="list-disc pl-4 md:pl-8 pr-1 space-y-1.5 md:space-y-2 text-left">
                           {(language === "es"
                             ? project.features_es || []
                             : project.features_en || []
                           ).map((feature) => (
-                            <li key={feature} className="text-gray-300 text-sm">
+                            <li
+                              key={feature}
+                              className="text-gray-300 text-xs md:text-sm leading-snug"
+                            >
                               {feature}
                             </li>
                           ))}
@@ -118,11 +134,11 @@ const Projects = ({ language }) => {
                     </div>
 
                     {/* Tecnologías */}
-                    <div className="flex flex-nowrap overflow-x-auto gap-2 mb-4 text-center">
+                    <div className="flex flex-nowrap overflow-x-auto gap-2 mb-4 text-center pb-1">
                       {project.tech?.map((tech) => (
                         <span
                           key={tech}
-                          className="px-3 py-1 bg-gray-700 rounded-full text-xs text-gray-300 whitespace-nowrap"
+                          className="px-3 py-1 bg-gray-700 rounded-full text-[0.7rem] md:text-xs text-gray-300 whitespace-nowrap"
                         >
                           {tech}
                         </span>
@@ -130,13 +146,13 @@ const Projects = ({ language }) => {
                     </div>
 
                     {/* Botones */}
-                    <div className="flex flex-wrap justify-center gap-3">
+                    <div className="flex flex-wrap justify-center gap-2 md:gap-3">
                       {project.links?.demo && (
                         <Link
                           href={project.links.demo}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="bg-[#C29B39] hover:bg-[#ae8a34] text-white px-4 py-2 rounded-lg flex items-center gap-2 text-sm"
+                          className="bg-[#C29B39] hover:bg-[#ae8a34] text-white px-3 md:px-4 py-2 rounded-lg flex items-center gap-2 text-xs md:text-sm"
                         >
                           <span>🌐</span>
                           {language === "es"
@@ -150,7 +166,7 @@ const Projects = ({ language }) => {
                           href={project.links.documentation}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-lg flex items-center gap-2 text-sm"
+                          className="bg-blue-600 hover:bg-blue-500 text-white px-3 md:px-4 py-2 rounded-lg flex items-center gap-2 text-xs md:text-sm"
                         >
                           <span>📚</span>
                           {language === "es"
@@ -164,7 +180,7 @@ const Projects = ({ language }) => {
                           href={project.links.docs}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-lg flex items-center gap-2 text-sm"
+                          className="bg-blue-600 hover:bg-blue-500 text-white px-3 md:px-4 py-2 rounded-lg flex items-center gap-2 text-xs md:text-sm"
                         >
                           <span>📚</span>
                           {language === "es" ? "Documentación API" : "API Docs"}
@@ -176,7 +192,7 @@ const Projects = ({ language }) => {
                           href={project.links.code_api}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="bg-[#C29B39] hover:bg-[#ae8a34] text-white px-4 py-2 rounded-lg flex items-center gap-2 text-sm"
+                          className="bg-[#C29B39] hover:bg-[#ae8a34] text-white px-3 md:px-4 py-2 rounded-lg flex items-center gap-2 text-xs md:text-sm"
                         >
                           <span>🔑</span>
                           {language === "es" ? "Código API" : "API Code"}
@@ -188,7 +204,7 @@ const Projects = ({ language }) => {
                           href={project.links.code_frontend}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-lg flex items-center gap-2 text-sm"
+                          className="bg-blue-600 hover:bg-blue-500 text-white px-3 md:px-4 py-2 rounded-lg flex items-center gap-2 text-xs md:text-sm"
                         >
                           <span>🖥️</span>
                           {language === "es"
@@ -202,7 +218,7 @@ const Projects = ({ language }) => {
                           href={project.links.code}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="bg-[#C29B39] hover:bg-[#ae8a34] text-white px-4 py-2 rounded-lg flex items-center gap-2 text-sm"
+                          className="bg-[#C29B39] hover:bg-[#ae8a34] text-white px-3 md:px-4 py-2 rounded-lg flex items-center gap-2 text-xs md:text-sm"
                         >
                           <span>🖥️</span>
                           {language === "es" ? "Código" : "Code"}

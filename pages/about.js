@@ -10,89 +10,144 @@ const About = ({ language }) => {
       viewport={{ once: false, amount: 0.3 }}
       transition={{ duration: 1.2, ease: "easeOut" }}
     >
+      {/* TITLE */}
       <motion.h1
-        className="text-3xl sm:text-4xl md:text-5xl font-bold mb-10 text-center leading-tight"
+        className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-center leading-tight"
         style={{ color: "#C29B39" }}
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: false }}
-        transition={{ duration: 0.7, delay: 0.3 }}
       >
         {language === "es" ? "¡Hola! Soy Jorge" : "Hello! I'm Jorge"}
       </motion.h1>
 
+      {/* SUBTITLE */}
       <motion.p
-        className="text-lg max-w-2xl text-center mb-16"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: false }}
-        transition={{ duration: 0.7, delay: 0.3 }}
+        className="text-lg max-w-2xl text-center mb-10 font-semibold"
+        style={{ color: "#C29B39" }}
       >
         {language === "es"
-          ? "Desarrollador web full stack con un fuerte enfoque en backend y despliegue."
-          : "I'm a full-stack web developer with a strong focus on backend and deployment."}
+          ? "Ingeniero Cloud & DevOps especializado en servidores Linux, contenedores y automatización."
+          : "Cloud & DevOps Engineer specialized in Linux servers, containerized deployments and automation."}
       </motion.p>
 
-      <motion.p
-        className="text-md max-w-2xl text-center mb-8"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: false }}
-        transition={{ duration: 0.9, delay: 1.0 }}
-      >
+      {/* DESKTOP VERSION (HIDDEN ON MOBILE) */}
+      <motion.div className="hidden md:block text-md max-w-2xl text-center space-y-4">
         {language === "es" ? (
           <>
-            Me formé en el bootcamp full stack de desarrollo web de Ironhack,
-            donde trabajé con tecnologías como
-            <span className="font-semibold text-highlight">
-              {" "}
-              JavaScript, React, Node.js, Express
-            </span>
-            y <span className="font-semibold text-highlight">MongoDB</span>.
-            Además, gestiono mi propio servidor y despliego en
-            <span className="font-semibold text-highlight"> AWS EC2</span>,
-            utilizando{" "}
-            <span className="font-semibold text-highlight">
-              Docker, Nginx, Cloudflare y
-            </span>
-            <span className="font-semibold text-highlight"> systemd</span>, lo
-            que me ha permitido llevar proyectos reales a producción.
-            <br />
-            <br />
-            Actualmente curso el ciclo superior de{" "}
-            <span className="font-semibold text-highlight">
-              Administración de Sistemas Informáticos en Red (ASIR)
-            </span>{" "}
-            para reforzar mis conocimientos en administración de sistemas,
-            redes, virtualización y cloud computing.
+            <p>
+              Me formé en el bootcamp de Ironhack, trabajando con{" "}
+              <span className="font-semibold text-highlight">
+                JavaScript, React, Node.js, Express
+              </span>{" "}
+              y <span className="font-semibold text-highlight">MongoDB</span>.
+            </p>
+
+            <p>
+              Con el tiempo orienté mi perfil hacia infraestructura y sistemas,
+              gestionando servidores propios y desplegando aplicaciones en{" "}
+              <span className="font-semibold text-highlight">AWS EC2</span>.
+            </p>
+
+            <p>
+              Trabajo con{" "}
+              <span className="font-semibold text-highlight">
+                Docker, Nginx, Cloudflare, Linux y systemd
+              </span>
+              , creando entornos reproducibles, pipelines de despliegue,
+              monitorización y automatización.
+            </p>
+
+            <p>
+              También construyo laboratorios con{" "}
+              <span className="font-semibold text-highlight">
+                VMware y Ubuntu Server
+              </span>
+              , desarrollando infra en `/srv`, backups y despliegues reales.
+            </p>
+
+            <p>
+              Actualmente curso{" "}
+              <span className="font-semibold text-highlight">ASIR</span> para
+              reforzar redes, virtualización y cloud computing.
+            </p>
           </>
         ) : (
           <>
-            I trained at Ironhack's full stack web development bootcamp, where I
-            worked with technologies such as
-            <span className="font-semibold text-highlight">
-              {" "}
-              JavaScript, React, Node.js, Express
-            </span>
-            and <span className="font-semibold text-highlight">MongoDB</span>. I
-            also manage my own server and deploy projects on
-            <span className="font-semibold text-highlight"> AWS EC2</span>,
-            using{" "}
-            <span className="font-semibold text-highlight">
-              Docker, Nginx, Cloudflare and
-            </span>
-            <span className="font-semibold text-highlight"> systemd</span>,
-            which has allowed me to bring real projects into production.
-            <br />
-            <br />I am currently studying{" "}
-            <span className="font-semibold text-highlight">
-              Advanced Training in Networked Computer Systems Administration
-            </span>{" "}
-            to strengthen my skills in system administration, networking,
-            virtualization and cloud computing.
+            <p>
+              I trained at Ironhack's bootcamp, working with{" "}
+              <span className="font-semibold text-highlight">
+                JavaScript, React, Node.js, Express
+              </span>{" "}
+              and <span className="font-semibold text-highlight">MongoDB</span>.
+            </p>
+
+            <p>
+              Over time I shifted toward infrastructure and systems, managing
+              servers and deploying applications on{" "}
+              <span className="font-semibold text-highlight">AWS EC2</span>.
+            </p>
+
+            <p>
+              I work with{" "}
+              <span className="font-semibold text-highlight">
+                Docker, Nginx, Cloudflare, Linux and systemd
+              </span>
+              , building reproducible environments, pipelines, monitoring and
+              automation.
+            </p>
+
+            <p>
+              I also build labs using{" "}
+              <span className="font-semibold text-highlight">
+                VMware and Ubuntu Server
+              </span>
+              , designing `/srv` infra, backups and real deployments.
+            </p>
+
+            <p>
+              I am currently studying{" "}
+              <span className="font-semibold text-highlight">ASIR</span> to
+              strengthen virtualization, networking and cloud computing.
+            </p>
           </>
         )}
-      </motion.p>
+      </motion.div>
+
+      {/* MOBILE VERSION (HIDDEN ON DESKTOP) */}
+      <motion.div className="block md:hidden text-base max-w-xl text-center space-y-4">
+        {language === "es" ? (
+          <>
+            <p>
+              Ingeniero Cloud & DevOps con experiencia en{" "}
+              <span className="font-semibold">Linux, Docker, Nginx y AWS</span>.
+            </p>
+            <p>
+              Gestión de servidores, despliegues contenerizados y automatización
+              con systemd y Cloudflare.
+            </p>
+            <p>
+              Formado en Ironhack y actualmente cursando{" "}
+              <span className="font-semibold">ASIR</span>.
+            </p>
+          </>
+        ) : (
+          <>
+            <p>
+              Cloud & DevOps Engineer experienced with{" "}
+              <span className="font-semibold">
+                Linux, Docker, Nginx and AWS
+              </span>
+              .
+            </p>
+            <p>
+              Server management, containerized deployments and automation with
+              systemd and Cloudflare.
+            </p>
+            <p>
+              Trained at Ironhack and currently studying{" "}
+              <span className="font-semibold">ASIR</span>.
+            </p>
+          </>
+        )}
+      </motion.div>
     </motion.section>
   );
 };
