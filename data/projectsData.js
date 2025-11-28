@@ -169,10 +169,8 @@ export const projectsData = [
     category: "devops",
     title_es: "Entorno de Staging en VMware (Ubuntu + Docker)",
     title_en: "VMware Staging Environment (Ubuntu + Docker)",
-    description_es:
-      "Home Lab profesional en Ubuntu Server 24.04 con arquitectura /srv, Docker Compose maestro, Nginx reverse proxy, Uptime Kuma, Portainer, logrotate y backups automatizados.",
-    description_en:
-      "Professional Home Lab on Ubuntu Server 24.04 with /srv architecture, master Docker Compose, Nginx reverse proxy, Uptime Kuma, Portainer, logrotate and automated backups.",
+    description_es: "Home Lab profesional en Ubuntu Server 24.04",
+    description_en: "Professional Home Lab on Ubuntu Server 24.04",
     features_es: [
       "Arquitectura unificada en /srv para servicios e infra",
       "Nginx reverse proxy sirviendo servicios internos por dominio .local",
@@ -198,6 +196,72 @@ export const projectsData = [
     ],
     links: {
       documentation: "https://github.com/Jorgesq9/VMware-Staging-Environment",
+    },
+  },
+  {
+    id: "vmware-deploy",
+    category: "devops",
+    title_es: "Guía de Despliegue en VMware Staging",
+    title_en: "Deployment Guide for VMware Staging",
+    description_es:
+      "Guía paso a paso para desplegar proyectos entorno de staging en VMware (Ubuntu + Docker + Nginx).",
+    description_en:
+      "Step-by-step guide to deploy projects on the VMware staging environment (Ubuntu + Docker + Nginx).",
+    features_es: [
+      "Preparación de la VM con Ubuntu Server 24.04",
+      "Despliegue de Nginx reverse proxy y red interna Docker",
+      "Deploy del portfolio, Reservas API + front y Sales API en contenedores",
+      "Configuración de dominios .local y resolución desde el host",
+      "Buenas prácticas de despliegue, logs y troubleshooting",
+    ],
+    features_en: [
+      "VM provisioning with Ubuntu Server 24.04",
+      "Nginx reverse proxy and internal Docker network setup",
+      "Deployment of portfolio, Booking API + front and Sales API in containers",
+      "Configuration of .local domains and host resolution",
+      "Deployment best practices, logging and troubleshooting",
+    ],
+    tech: ["Linux", "Docker", "Docker Compose", "Nginx", "DevOps", "VMware"],
+    links: {
+      documentation:
+        "https://github.com/Jorgesq9/VMware-Staging-Environment/tree/main/Deploy",
+    },
+  },
+
+  {
+    id: "sales-reservations-api",
+    category: "backend",
+    title_es: "API de Ventas y Reservas (Node.js + Prisma)",
+    title_en: "Sales & Reservations API (Node.js + Prisma)",
+    description_es:
+      "API REST profesional para la gestión de ventas, clientes, productos y reservas, desarrollada con Node.js, Express y Prisma ORM. Incluye documentación interactiva con Swagger y despliegue en entorno Docker con Nginx reverse proxy.",
+    description_en:
+      "Professional REST API for managing sales, customers, products and reservations, built with Node.js, Express and Prisma ORM. Includes interactive Swagger documentation and deployment using Docker with Nginx reverse proxy.",
+    tech: [
+      "Node.js",
+      "Express",
+      "Prisma ORM",
+      "PostgreSQL / SQLite",
+      "Swagger",
+    ],
+    features_es: [
+      "CRUD completo de clientes, productos, pedidos y reservas",
+      "Prisma ORM con migraciones y generación automática de esquema",
+      "Swagger UI totalmente integrado",
+      "Middleware de API Key para proteger métodos no-GET",
+      "Estructura profesional orientada a microservicios",
+      "Despliegue en entorno Ubuntu + Docker + Nginx reverse proxy",
+    ],
+    features_en: [
+      "Full CRUD for customers, products, orders and reservations",
+      "Prisma ORM with migrations and auto-generated schema",
+      "Fully integrated Swagger UI",
+      "API Key middleware protecting non-GET methods",
+      "Professional microservice-oriented structure",
+      "Deployment on Ubuntu + Docker + Nginx reverse proxy environment",
+    ],
+    links: {
+      code_api: "https://github.com/Jorgesq9/sales-reservations-api-node",
     },
   },
 ];
