@@ -237,7 +237,6 @@ export const projectsData = [
       "Publicación segura mediante Cloudflare Tunnel y subdominios jorgeesquivafullstack.es",
       "Nginx reverse proxy enroutando tráfico HTTPS hacia servicios internos Docker",
       "Runner self-hosted de GitHub Actions en el mini PC para CI/CD del portfolio",
-      "Monitorización en producción con Uptime Kuma y gestión de contenedores con Portainer",
     ],
     features_en: [
       "1:1 clone of the /srv architecture from staging to production",
@@ -245,7 +244,6 @@ export const projectsData = [
       "Secure exposure through Cloudflare Tunnel and jorgeesquivafullstack.es subdomains",
       "Nginx reverse proxy routing HTTPS traffic to internal Docker services",
       "Self-hosted GitHub Actions runner on the mini PC for portfolio CI/CD",
-      "Production monitoring with Uptime Kuma and container management with Portainer",
     ],
     tech: [
       "Ubuntu Server 24.04",

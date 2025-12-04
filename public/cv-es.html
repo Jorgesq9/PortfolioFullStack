@@ -1,555 +1,423 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Jorge Esquiva Llobregat — CV (Cloud/DevOps) | ES</title>
+    <meta charset="UTF-8" />
+    <title>Jorge Esquiva Llobregat — CV Cloud/DevOps</title>
     <style>
       :root {
-        --bg: #0b0f14;
-        --panel: #121821;
-        --muted: #8aa0b4;
-        --text: #e8f0f7;
-        --accent: #53b7ff;
-        --accent2: #7cf0d1;
-        --chip: #1b2532;
-        --border: #1d2733;
-        --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        --accent: #1f2933;
+        --text-main: #111827;
+        --text-muted: #4b5563;
+        --border: #e5e7eb;
       }
-      *,
-      *::before,
-      *::after {
+      * {
         box-sizing: border-box;
       }
-      html,
       body {
-        height: 100%;
-      }
-      body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        color: var(--text-main);
         margin: 0;
-        font: 500 15px/1.55 "Inter", system-ui, -apple-system, Segoe UI, Roboto,
-          Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
-        color: var(--text);
-        background: radial-gradient(
-            1200px 600px at 10% -10%,
-            rgba(83, 183, 255, 0.12),
-            transparent 60%
-          ),
-          radial-gradient(
-            900px 500px at 110% 10%,
-            rgba(124, 240, 209, 0.1),
-            transparent 60%
-          ),
-          var(--bg);
+        padding: 32px;
+        background: #f9fafb;
       }
       .page {
-        max-width: 1000px;
-        margin: 40px auto;
-        padding: 28px;
+        max-width: 900px;
+        margin: 0 auto;
+        background: #ffffff;
+        padding: 32px 40px;
+        border-radius: 8px;
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
       }
-      .card {
-        background: linear-gradient(
-          180deg,
-          rgba(255, 255, 255, 0.02),
-          rgba(255, 255, 255, 0)
-        );
-        border: 1px solid var(--border);
-        border-radius: 16px;
-        box-shadow: var(--shadow);
-        overflow: hidden;
-      }
-
-      /* HEADER */
       header {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 14px;
-        padding: 32px 28px;
-        background: linear-gradient(
-          90deg,
-          rgba(83, 183, 255, 0.12),
-          rgba(124, 240, 209, 0.1) 60%,
-          transparent
-        );
-        border-bottom: 1px solid var(--border);
+        gap: 8px;
+        border-bottom: 2px solid var(--border);
+        padding-bottom: 16px;
+        margin-bottom: 16px;
       }
-
-      h1 {
+      header h1 {
+        font-size: 28px;
         margin: 0;
-        font-weight: 800;
-        font-size: 30px;
-        letter-spacing: 0.4px;
+        letter-spacing: 0.03em;
       }
-
-      .subtitle {
-        margin-top: 6px;
-        color: var(--muted);
-        font-weight: 600;
+      header .headline {
         font-size: 15px;
+        font-weight: 600;
+        color: var(--text-muted);
       }
-
       .contact {
         display: flex;
         flex-wrap: wrap;
-        gap: 12px;
-        justify-content: center;
-        margin-top: 10px;
-      }
-
-      .pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 8px 12px;
-        border-radius: 999px;
-        background: var(--chip);
-        border: 1px solid var(--border);
-        color: var(--text);
-        text-decoration: none;
-        font-size: 14px;
-      }
-
-      .pill svg {
-        width: 16px;
-        height: 16px;
-      }
-
-      /* LAYOUT */
-      .grid {
-        display: grid;
-        gap: 22px;
-        padding: 22px;
-        grid-template-columns: 1.15fr 0.85fr;
-      }
-      @media (max-width: 900px) {
-        .grid {
-          grid-template-columns: 1fr;
-        }
-      }
-
-      /* PANELS & SECTIONS */
-      .panel {
-        background: var(--panel);
-        border: 1px solid var(--border);
-        border-radius: 14px;
-        padding: 18px;
-      }
-      .section-title {
-        display: flex;
-        align-items: center;
-        gap: 10px;
+        gap: 8px 16px;
         font-size: 13px;
-        letter-spacing: 0.12em;
+        color: var(--text-muted);
+      }
+      .contact span::before {
+        content: "• ";
+        margin-right: 2px;
+      }
+      .section {
+        margin-bottom: 16px;
+        page-break-inside: avoid;
+      }
+      .section h2 {
+        font-size: 15px;
         text-transform: uppercase;
-        color: var(--muted);
-        margin: 0 0 14px;
-      }
-      .section-title svg {
-        width: 18px;
-        height: 18px;
-        stroke: var(--accent);
-      }
-      .item {
-        margin-bottom: 14px;
-      }
-      .role {
-        display: flex;
-        align-items: baseline;
-        gap: 10px;
-        flex-wrap: wrap;
-      }
-      .role b {
-        font-size: 16px;
-      }
-      .role .when {
-        color: var(--muted);
-        font-size: 13px;
-      }
-      .role .place {
-        color: var(--muted);
-      }
-      .bullets {
-        margin: 8px 0 0 0;
-        padding-left: 18px;
-      }
-      .bullets li {
-        margin: 6px 0;
-      }
-      .chips {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-      }
-      .chip {
-        background: var(--chip);
-        border: 1px solid var(--border);
-        padding: 6px 10px;
-        border-radius: 10px;
-        font-size: 13px;
-      }
-      .twocol {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-      }
-      @media (max-width: 700px) {
-        .twocol {
-          grid-template-columns: 1fr;
-        }
-      }
-      .links a {
+        letter-spacing: 0.08em;
         color: var(--accent);
-        text-decoration: none;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 4px;
+        margin: 0 0 8px 0;
       }
-      .muted {
-        color: var(--muted);
-      }
-      footer {
-        padding: 14px 22px;
-        color: var(--muted);
+      p {
+        margin: 4px 0 6px;
         font-size: 13px;
+        line-height: 1.5;
+      }
+      .two-cols {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 20px;
+      }
+      .item-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 8px;
+        font-size: 13px;
+        margin-bottom: 2px;
+      }
+      .item-title {
+        font-weight: 600;
+      }
+      .item-meta {
+        font-size: 12px;
+        color: var(--text-muted);
+        text-align: right;
+        white-space: nowrap;
+      }
+      ul {
+        margin: 0 0 4px 16px;
+        padding: 0;
+        font-size: 13px;
+      }
+      li {
+        margin-bottom: 2px;
+      }
+      .tag-groups {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 6px 16px;
+        font-size: 13px;
+      }
+      .tag-group-title {
+        font-weight: 600;
+        color: var(--text-muted);
+        margin-bottom: 1px;
+      }
+      .tag-group-content {
+        color: var(--text-main);
+      }
+      .inline-list {
+        font-size: 13px;
+      }
+      .inline-list span + span::before {
+        content: " • ";
+        color: var(--text-muted);
+        margin: 0 4px;
+      }
+      @media print {
+        body {
+          background: #ffffff;
+          padding: 0;
+        }
+        .page {
+          box-shadow: none;
+          border-radius: 0;
+          max-width: 100%;
+          margin: 0;
+          padding: 16mm 16mm 12mm;
+        }
+        a {
+          color: inherit;
+          text-decoration: none;
+        }
       }
     </style>
   </head>
   <body>
-    <main class="page card" role="main">
+    <div class="page">
       <header>
-        <div>
-          <h1>Jorge Esquiva Llobregat</h1>
-          <div class="subtitle">
-            Cloud & DevOps Junior · SysAdmin · Full-Stack (Node/React)
-          </div>
+        <h1>Jorge Esquiva Llobregat</h1>
+        <div class="headline">
+          Cloud &amp; DevOps · Administración de Sistemas · Full-Stack
+          (Node/React)
         </div>
         <div class="contact">
-          <a
-            class="pill"
-            href="mailto:jorgeesquivait@gmail.com"
-            aria-label="Email"
+          <span
+            ><a href="mailto:jorge.esquiva.llobregat@gmail.com"
+              >jorge.esquiva.llobregat@gmail.com</a
+            ></span
           >
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M4 4h16v16H4z" />
-              <path d="m4 7 8 6 8-6" />
-            </svg>
-            jorgeesquivait@gmail.com
-          </a>
-          <span class="pill" aria-label="Location">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M12 21s7-5.33 7-11a7 7 0 1 0-14 0c0 5.67 7 11 7 11Z" />
-              <circle cx="12" cy="10" r="3" />
-            </svg>
-            Santa Cruz de Tenerife · Remoto UE
-          </span>
-          <a
-            class="pill"
-            href="https://jorgeesquivafullstack.es"
-            target="_blank"
-            rel="noopener"
+          <span>Santa Cruz de Tenerife</span>
+          <span>Remoto UE</span>
+          <span
+            ><a
+              href="https://jorgeesquivafullstack.es"
+              target="_blank"
+              rel="noreferrer"
+              >jorgeesquivafullstack.es</a
+            ></span
           >
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <circle cx="12" cy="12" r="10" />
-              <path
-                d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10Z"
-              />
-            </svg>
-            jorgeesquivafullstack.es
-          </a>
-          <span class="pill">☎︎ +34 603 013 371</span>
+          <span>+34 603 013 371</span>
         </div>
       </header>
 
-      <div class="grid">
-        <!-- Izquierda -->
-        <div class="left">
-          <section class="panel">
-            <h3 class="section-title">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M3 12h18M3 6h18M3 18h18"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                />
-              </svg>
-              Perfil
-            </h3>
+      <div class="two-cols">
+        <div>
+          <section class="section">
+            <h2>Perfil</h2>
             <p>
-              Técnico de Sistemas y desarrollador con foco en
-              <b>Cloud & DevOps</b>. Experiencia real desplegando servicios en
-              Linux con <b>Docker, Nginx, Cloudflare Tunnel, PM2 y systemd</b>,
-              y desarrollando APIs en <b>Node/Express</b> con
-              <b>MongoDB/PostgreSQL</b>.
+              Técnico de sistemas y desarrollador con foco en Cloud &amp;
+              DevOps. Experiencia real desplegando servicios en Linux con
+              Docker, Nginx, Cloudflare Tunnel, PM2 y systemd, y desarrollando
+              APIs en Node/Express con MongoDB y PostgreSQL. Enfoque muy
+              práctico: diseño, documento y despliego entornos completos, desde
+              laboratorios de staging locales hasta producción en servidor
+              propio y plataformas cloud.
             </p>
           </section>
 
-          <section class="panel">
-            <h3 class="section-title">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M6 18L18 6M6 6l12 12"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                />
-              </svg>
-              Experiencia
-            </h3>
-            <div class="item">
-              <div class="role">
-                <b>Soporte Técnico</b>
-                <span class="place">· Fever (Remoto, ES)</span>
-                <span class="when">04/2024 – Actualidad</span>
+          <section class="section">
+            <h2>Experiencia</h2>
+
+            <article>
+              <div class="item-header">
+                <div class="item-title">Soporte Técnico · Fever</div>
+                <div class="item-meta">Remoto (ES) · 04/2024 – Actualidad</div>
               </div>
-              <ul class="bullets">
-                <li>
-                  Resolución de incidencias; escalado/verificación con
-                  ingeniería.
-                </li>
-                <li>
-                  Ticketing y documentación en inglés con equipos distribuidos.
-                </li>
-              </ul>
-            </div>
-            <div class="item">
-              <div class="role">
-                <b>Administrativo & Atención al cliente</b>
-                <span class="place">· Centauro (Benidorm, ES)</span>
-                <span class="when">02/2023 – 04/2024</span>
+              <p class="inline-list">
+                <span
+                  >Resolución de incidencias y coordinación con equipos de
+                  ingeniería</span
+                >
+                <span>Ticketing y documentación íntegramente en inglés</span>
+                <span>Soporte de alto volumen en entorno distribuido</span>
+              </p>
+            </article>
+
+            <article>
+              <div class="item-header">
+                <div class="item-title">
+                  Administrativo &amp; Atención al cliente · Centauro
+                </div>
+                <div class="item-meta">Benidorm (ES) · 02/2023 – 04/2024</div>
               </div>
-              <ul class="bullets">
-                <li>
-                  Gestión de procesos digitales e incidencias; trato en
-                  español/inglés.
-                </li>
+              <ul>
+                <li>Gestión de procesos digitales e incidencias.</li>
+                <li>Atención al cliente en español e inglés.</li>
               </ul>
-            </div>
-            <div class="item">
-              <div class="role">
-                <b>Auxiliar Administrativo</b>
-                <span class="place">· PCR Promens (Tilburg, NL)</span>
-                <span class="when">10/2020 – 01/2023</span>
+            </article>
+
+            <article>
+              <div class="item-header">
+                <div class="item-title">
+                  Auxiliar Administrativo · PCR Promens
+                </div>
+                <div class="item-meta">Tilburg (NL) · 10/2020 – 01/2023</div>
               </div>
-              <ul class="bullets">
+              <ul>
                 <li>
-                  Entorno internacional; trabajo multicultural y comunicación en
-                  inglés.
+                  Entorno industrial internacional con equipos multiculturales.
                 </li>
+                <li>Comunicación y coordinación diaria en inglés.</li>
               </ul>
-            </div>
+            </article>
           </section>
 
-          <!-- PROYECTOS DESTACADOS ACTUALIZADOS -->
-          <section class="panel">
-            <h3 class="section-title">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M4 4h16v16H4z"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                />
-                <path
-                  d="m4 7 8 6 8-6"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                />
-              </svg>
-              Proyectos Destacados
-            </h3>
+          <section class="section">
+            <h2>Proyectos destacados</h2>
 
-            <div class="item">
-              <div class="role">
-                <b>Entorno de Staging en VMware</b>
-                <span class="muted">· Ubuntu Server · Docker · Nginx</span>
+            <article>
+              <div class="item-header">
+                <div class="item-title">
+                  Entorno de Staging en VMware · Ubuntu Server · Docker · Nginx
+                </div>
+                <div class="item-meta">
+                  <a
+                    href="https://github.com/Jorgesq9/VMware-Staging-Environment"
+                    >Código</a
+                  >
+                </div>
               </div>
-              <ul class="bullets">
+              <p>
+                Home Lab profesional basado en un entorno de staging en Ubuntu
+                Server 24.04 dentro de VMware Workstation y una migración
+                completa a un mini PC en producción con dominio propio y
+                subdominios.
+              </p>
+              <ul>
                 <li>
-                  <b>Home Lab profesional</b> sobre Ubuntu Server 24.04 en
-                  VMware Workstation, simulando un servidor de producción real.
+                  Arquitectura unificada en <code>/srv</code> con Docker
+                  Compose, Nginx reverse proxy, Portainer y Uptime Kuma.
                 </li>
                 <li>
-                  Arquitectura unificada en <b>/srv</b> con Docker Compose,
-                  Nginx reverse proxy, Portainer, Uptime Kuma,
-                  <b>logrotate</b> y scripts de backup automático.
+                  Migración 1:1 del entorno de staging al mini PC manteniendo la
+                  misma estructura y servicios en contenedores.
                 </li>
                 <li>
-                  Usado como entorno de <b>staging</b> para probar despliegues y
-                  migraciones antes de mover servicios a servidor físico o
-                  cloud.
+                  Exposición segura a internet mediante Cloudflare Tunnel y
+                  subdominios.
+                </li>
+                <li>
+                  Usado como entorno de staging para probar despliegues y
+                  migraciones antes de pasar a mini PC o cloud.
                 </li>
               </ul>
-            </div>
+            </article>
 
-            <div class="item">
-              <div class="role">
-                <b>Central de Reservas (Frontend + API)</b>
-                <span class="muted">· AWS & Servidor propio</span>
+            <article>
+              <div class="item-header">
+                <div class="item-title">
+                  Central de Reservas (Frontend + API) · AWS &amp; Servidor
+                  propio
+                </div>
+                <div class="item-meta">
+                  <a
+                    href="https://api-reservas.jorgeesquivafullstack.es/api-docs/"
+                    >API</a
+                  >
+                </div>
               </div>
-              <ul class="bullets">
+              <p>
+                Plataforma de reservas full-stack con control de acceso por
+                roles y panel de administración para gestionar reservas y
+                usuarios.
+              </p>
+              <ul>
                 <li>
-                  Autenticación JWT por roles (Admin/Worker) y panel de gestión
-                  en React para reservas y usuarios.
+                  Autenticación JWT para roles Admin / Worker con endpoints
+                  protegidos.
                 </li>
                 <li>
-                  API documentada con Swagger; base de datos MongoDB optimizada
-                  con índices para uso real.
+                  API documentada con Swagger; MongoDB optimizada con índices
+                  para patrones de búsqueda reales.
                 </li>
                 <li>
-                  Despliegue en <b>AWS EC2</b> y servidor propio usando Docker,
-                  Nginx como reverse proxy, Certbot SSL y UFW.
+                  Despliegue en AWS EC2 y servidor propio usando Docker, Nginx
+                  como reverse proxy, Certbot SSL y UFW.
                 </li>
               </ul>
-            </div>
+            </article>
 
-            <div class="item">
-              <div class="role">
-                <b>Sales & Reservations API</b>
-                <span class="muted">· Node + PostgreSQL</span>
+            <article>
+              <div class="item-header">
+                <div class="item-title">
+                  Sales &amp; Reservations API · Node + PostgreSQL
+                </div>
+                <div class="item-meta">
+                  <a href="https://api-sales.jorgeesquivafullstack.es/docs/"
+                    >Docs</a
+                  >
+                </div>
               </div>
-              <ul class="bullets">
+              <p>
+                API REST desarrollada con Express y Prisma ORM, exponiendo
+                endpoints para clientes, productos, pedidos y reservas.
+              </p>
+              <ul>
                 <li>
-                  API REST con <b>Express + Prisma ORM</b>, migraciones con
-                  Prisma Migrate y documentación Swagger.
+                  Prisma Migrate para gestión de esquema y entornos
+                  reproducibles.
                 </li>
                 <li>
-                  Despliegue Dockerizado y exposición segura con Cloudflare
-                  Tunnel.
+                  Swagger UI integrado y protegido detrás de Cloudflare Tunnel.
+                </li>
+                <li>
+                  Despliegue dockerizado y reverse proxy con Nginx sobre Ubuntu
+                  Server.
                 </li>
               </ul>
-            </div>
+            </article>
           </section>
         </div>
 
-        <!-- Derecha -->
-        <aside class="right">
-          <section class="panel">
-            <h3 class="section-title">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M12 2v20M2 12h20"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                />
-              </svg>
-              Habilidades
-            </h3>
-            <div class="chips">
-              <span class="chip">AWS (EC2, S3, IAM)</span
-              ><span class="chip">Azure</span><span class="chip">Docker</span>
-              <span class="chip">Nginx</span
-              ><span class="chip">Cloudflare Tunnel</span
-              ><span class="chip">Certbot SSL</span>
-              <span class="chip">UFW</span><span class="chip">PM2</span
-              ><span class="chip">Python</span>
-              <span class="chip">JavaScript</span
-              ><span class="chip">Linux (Ubuntu/Alma)</span>
-              <span class="chip">GitHub Actions</span
-              ><span class="chip">Virtualización</span
-              ><span class="chip">Backups</span>
-              <span class="chip">Node.js</span><span class="chip">Express</span
-              ><span class="chip">Prisma ORM</span>
-              <span class="chip">MongoDB</span
-              ><span class="chip">PostgreSQL</span
-              ><span class="chip">Swagger</span> <span class="chip">React</span
-              ><span class="chip">REST APIs</span>
-            </div>
-          </section>
-
-          <section class="panel">
-            <h3 class="section-title">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M6 2h12v4H6z"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                />
-                <path
-                  d="M4 8h16v12H4z"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                />
-              </svg>
-              Educación
-            </h3>
-            <div class="item">
-              <div class="role">
-                <b>ASIR</b>
-                <span class="place">· CIFP César Manrique · España</span>
+        <div>
+          <section class="section">
+            <h2>Habilidades clave</h2>
+            <div class="tag-groups">
+              <div>
+                <div class="tag-group-title">Cloud &amp; DevOps</div>
+                <div class="tag-group-content">
+                  AWS (EC2, S3, IAM), Azure (fundamentos), Docker, Docker
+                  Compose, Nginx, Cloudflare Tunnel, Certbot SSL, UFW, GitHub
+                  Actions, copias de seguridad, monitorización.
+                </div>
               </div>
-            </div>
-            <div class="item">
-              <div class="role">
-                <b>Bootcamp Full-Stack Web Development</b>
-                <span class="place">· Ironhack · Países Bajos</span>
+              <div>
+                <div class="tag-group-title">Backend &amp; APIs</div>
+                <div class="tag-group-content">
+                  Node.js, Express, APIs REST, Swagger/OpenAPI, Prisma ORM, JWT
+                  Auth, middleware de API Key.
+                </div>
+              </div>
+              <div>
+                <div class="tag-group-title">Bases de datos</div>
+                <div class="tag-group-content">
+                  MongoDB (índices, Atlas), PostgreSQL, SQLite, diseño SQL
+                  básico y migraciones.
+                </div>
+              </div>
+              <div>
+                <div class="tag-group-title">Sistemas &amp; Herramientas</div>
+                <div class="tag-group-content">
+                  Linux (Ubuntu, AlmaLinux), virtualización (VMware), Portainer,
+                  Uptime Kuma, PM2, systemd, logrotate, Git/GitHub.
+                </div>
               </div>
             </div>
           </section>
 
-          <section class="panel">
-            <h3 class="section-title">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M8 21h8M12 17V3"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                />
-              </svg>
-              Certificaciones (en progreso)
-            </h3>
-            <ul class="bullets">
+          <section class="section">
+            <h2>Formación</h2>
+            <article>
+              <div class="item-header">
+                <div class="item-title">
+                  Administración de Sistemas Informáticos en Red (ASIR)
+                </div>
+                <div class="item-meta">CIFP César Manrique · España</div>
+              </div>
+            </article>
+            <article>
+              <div class="item-header">
+                <div class="item-title">
+                  Bootcamp Full-Stack Web Development
+                </div>
+                <div class="item-meta">Ironhack · Países Bajos</div>
+              </div>
+            </article>
+          </section>
+
+          <section class="section">
+            <h2>Certificaciones (en progreso)</h2>
+            <ul>
               <li>
-                <b>AWS Solutions Architect – Associate</b> (objetivo abril 2026)
-              </li>
-              <li>
-                <b>Azure Administrator – Associate</b> (objetivo abril 2026)
+                AWS Solutions Architect – Associate (objetivo abril 2026).
               </li>
             </ul>
           </section>
 
-          <section class="panel">
-            <h3 class="section-title">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M3 5h18M3 12h12M3 19h8"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                />
-              </svg>
-              Idiomas
-            </h3>
-            <div class="twocol">
-              <div>
-                <b>Español</b>
-                <div class="muted">Nativo</div>
-              </div>
-              <div>
-                <b>Inglés</b>
-                <div class="muted">Avanzado</div>
-              </div>
-            </div>
+          <section class="section">
+            <h2>Idiomas</h2>
+            <ul>
+              <li>Español – Nativo.</li>
+              <li>Inglés – Avanzado .</li>
+            </ul>
           </section>
-        </aside>
+        </div>
       </div>
-      <footer></footer>
-    </main>
+    </div>
   </body>
 </html>
