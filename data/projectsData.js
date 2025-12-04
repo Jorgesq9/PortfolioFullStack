@@ -113,46 +113,10 @@ export const projectsData = [
     ],
     images: ["/Front-End.png"],
     links: {
-      demo: "http://centralreservas.jorgeesquivafullstack.es/login",
+      demo: "https://reservas.jorgeesquivafullstack.es",
       code_api: "https://github.com/Jorgesq9/Reservas-Back",
       code_frontend: "https://github.com/Jorgesq9/Reservas-Front",
-      docs: "https://api.jorgeesquivafullstack.es/api-docs/", // Swagger docs link
-    },
-  },
-
-  {
-    id: 5,
-    category: "backend",
-    title_es: "API de Ventas y Reservas",
-    title_en: "Sales & Reservations API",
-    description_es: "API para gestión de ventas y reservas",
-    description_en: " API for sales and bookings management",
-    tech: [
-      "Node.js",
-      "Express",
-      "JS",
-      "Prisma ORM",
-      "PostgreSQL",
-      "Swagger",
-      "Docker",
-    ],
-    features_es: [
-      "Endpoints REST para ventas y reservas",
-      "Generación automática de la base de datos con Prisma",
-      "Migraciones y schema gestionados con Prisma Migrate",
-      "Documentación interactiva con Swagger",
-      "Despliegue en servidor autogestionado con túneles Cloudflare",
-    ],
-    features_en: [
-      "REST endpoints for sales and booking management",
-      "Database schema generation with Prisma",
-      "Migrations handled via Prisma Migrate",
-      "Interactive Swagger API documentation",
-      "Deployment on self-hosted server with Cloudflare tunnels",
-    ],
-    links: {
-      docs: "https://apinode.jorgeesquivafullstack.es/docs",
-      code_api: "https://github.com/Jorgesq9/sales-reservations-api-node", // ajusta si tu repo se llama distinto
+      docs: "https://api-reservas.jorgeesquivafullstack.es/api-docs", // Swagger docs link
     },
   },
 
@@ -255,6 +219,45 @@ export const projectsData = [
     links: {
       code_api: "https://github.com/Jorgesq9/sales-reservations-api-node",
       docs: "https://api-sales.jorgeesquivafullstack.es/docs/",
+    },
+  },
+
+  {
+    id: "mini-pc-migration",
+    category: "migrations",
+    title_es: "Migración VMware → Mini PC (Producción Docker + Cloudflare)",
+    title_en: "VMware → Mini PC Migration (Docker Production + Cloudflare)",
+    description_es:
+      "Migración completa desde un entorno de staging en VMware a un mini PC en producción con Ubuntu Server 24.04. ",
+    description_en:
+      "Complete migration from a VMware staging environment to a production mini PC running Ubuntu Server 24.04.",
+    features_es: [
+      "Clonado 1:1 de la estructura /srv desde el entorno de staging a producción",
+      "Despliegue de portfolio, APIs y servicios de monitorización en contenedores Docker",
+      "Publicación segura mediante Cloudflare Tunnel y subdominios jorgeesquivafullstack.es",
+      "Nginx reverse proxy enroutando tráfico HTTPS hacia servicios internos Docker",
+      "Runner self-hosted de GitHub Actions en el mini PC para CI/CD del portfolio",
+      "Monitorización en producción con Uptime Kuma y gestión de contenedores con Portainer",
+    ],
+    features_en: [
+      "1:1 clone of the /srv architecture from staging to production",
+      "Deployment of portfolio, APIs and monitoring services using Docker containers",
+      "Secure exposure through Cloudflare Tunnel and jorgeesquivafullstack.es subdomains",
+      "Nginx reverse proxy routing HTTPS traffic to internal Docker services",
+      "Self-hosted GitHub Actions runner on the mini PC for portfolio CI/CD",
+      "Production monitoring with Uptime Kuma and container management with Portainer",
+    ],
+    tech: [
+      "Ubuntu Server 24.04",
+      "Docker Compose",
+      "Nginx",
+      "Cloudflare Tunnel",
+      "GitHub Actions",
+      "Self-hosted runner",
+    ],
+    links: {
+      documentation:
+        "https://github.com/Jorgesq9/VMwareStaging-Environment/tree/main/Infra%20Migra",
     },
   },
 ];
