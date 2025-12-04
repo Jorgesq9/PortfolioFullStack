@@ -254,6 +254,7 @@ export const projectsData = [
     ],
     links: {
       code_api: "https://github.com/Jorgesq9/sales-reservations-api-node",
+      docs: "https://api-sales.jorgeesquivafullstack.es/docs/",
     },
   },
 ];
