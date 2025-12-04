@@ -22,15 +22,7 @@ export const projectsData = [
       "User account management (create, edit, delete)",
       "Responsive UI and online demo",
     ],
-    tech: [
-      "Mendix",
-      "Low-code",
-      "Security",
-      "Cloud deployment",
-      "CSS",
-      "JS",
-      "GitHub",
-    ],
+    tech: ["Mendix", "Low-code", "Security", "Cloud deployment", "CSS", "JS"],
     links: {
       demo: "https://trackerissue-sandbox.mxapps.io/index.html?profile=Responsive",
       documentation: "https://github.com/Jorgesq9/IssueTracker-Mendix-",
