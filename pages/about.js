@@ -15,7 +15,7 @@ const About = ({ language }) => {
         className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-center leading-tight"
         style={{ color: "#C29B39" }}
       >
-        {language === "es" ? "¡Hola! Soy Jorge" : "Hello! I'm Jorge"}
+        {language === "es" ? "Hola! Soy Jorge" : "Hello! I'm Jorge"}
       </motion.h1>
 
       {/* SUBTITLE */}
