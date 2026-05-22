@@ -24,126 +24,170 @@ const About = ({ language }) => {
         style={{ color: "#C29B39" }}
       >
         {language === "es"
-          ? "Ingeniero Cloud & DevOps especializado en servidores Linux, contenedores y automatización."
-          : "Cloud & DevOps Engineer specialized in Linux servers, containerized deployments and automation."}
+          ? "Técnico de Sistemas especializado en infraestructura Linux, automatización y entornos cloud."
+          : "Systems Engineer specialized in Linux infrastructure, automation and cloud environments."}
       </motion.p>
 
-      {/* DESKTOP VERSION (HIDDEN ON MOBILE) */}
+      {/* DESKTOP VERSION */}
       <motion.div className="hidden md:block text-md max-w-2xl text-center space-y-4">
         {language === "es" ? (
           <>
             <p>
-              Me formé en el bootcamp de Ironhack, trabajando con{" "}
+              Actualmente trabajo como{" "}
               <span className="font-semibold text-highlight">
-                JavaScript, React, Node.js, Express
-              </span>{" "}
-              y <span className="font-semibold text-highlight">MongoDB</span>.
-            </p>
-
-            <p>
-              Con el tiempo orienté mi perfil hacia infraestructura y sistemas,
-              gestionando servidores propios y desplegando aplicaciones en{" "}
-              <span className="font-semibold text-highlight">AWS EC2</span>.
-            </p>
-
-            <p>
-              Trabajo con{" "}
-              <span className="font-semibold text-highlight">
-                Docker, Nginx, Cloudflare, Linux y systemd
+                Técnico de Sistemas en Santander Digital Services
               </span>
-              , creando entornos reproducibles, pipelines de despliegue,
-              monitorización y automatización.
-            </p>
-
-            <p>
-              También construyo laboratorios con{" "}
+              , operando infraestructura híbrida crítica 24/7 con{" "}
               <span className="font-semibold text-highlight">
-                VMware y Ubuntu Server
+                Linux, Mainframe IBM z/OS y Dynatrace
               </span>
-              , desarrollando infra en `/srv`, backups y despliegues reales.
+              .
             </p>
 
             <p>
-              Actualmente curso{" "}
-              <span className="font-semibold text-highlight">ASIR</span> para
-              reforzar redes, virtualización y cloud computing.
+              Gestiono entornos de producción reales con{" "}
+              <span className="font-semibold text-highlight">
+                Docker, Nginx, Cloudflare y AWS EC2
+              </span>
+              , desplegando y manteniendo servicios en un servidor propio en
+              producción.
+            </p>
+
+            <p>
+              Me especializo en{" "}
+              <span className="font-semibold text-highlight">
+                automatización de infraestructura
+              </span>
+              , construyendo entornos reproducibles con pipelines de despliegue,
+              monitorización y scripting en{" "}
+              <span className="font-semibold text-highlight">
+                Bash y Python
+              </span>
+              .
+            </p>
+
+            <p>
+              Mantengo un homelab propio con staging y producción replicados,
+              donde practico y despliego con{" "}
+              <span className="font-semibold text-highlight">
+                VMware, Ubuntu Server y Docker Compose
+              </span>
+              .
+            </p>
+
+            <p>
+              Formado en desarrollo full-stack en{" "}
+              <span className="font-semibold text-highlight">Ironhack</span> y
+              actualmente preparando la certificación{" "}
+              <span className="font-semibold text-highlight">
+                AWS Solutions Architect Associate
+              </span>
+              .
             </p>
           </>
         ) : (
           <>
             <p>
-              I trained at Ironhack's bootcamp, working with{" "}
+              Currently working as{" "}
               <span className="font-semibold text-highlight">
-                JavaScript, React, Node.js, Express
+                Systems Engineer at Santander Digital Services
+              </span>
+              , operating critical hybrid infrastructure 24/7 with{" "}
+              <span className="font-semibold text-highlight">
+                Linux, IBM z/OS Mainframe and Dynatrace
+              </span>
+              .
+            </p>
+
+            <p>
+              I manage real production environments with{" "}
+              <span className="font-semibold text-highlight">
+                Docker, Nginx, Cloudflare and AWS EC2
+              </span>
+              , deploying and maintaining services on a self-hosted production
+              server.
+            </p>
+
+            <p>
+              I specialize in{" "}
+              <span className="font-semibold text-highlight">
+                infrastructure automation
+              </span>
+              , building reproducible environments with deployment pipelines,
+              monitoring and scripting in{" "}
+              <span className="font-semibold text-highlight">
+                Bash and Python
+              </span>
+              .
+            </p>
+
+            <p>
+              I maintain a personal homelab with replicated staging and
+              production environments, practicing and deploying with{" "}
+              <span className="font-semibold text-highlight">
+                VMware, Ubuntu Server and Docker Compose
+              </span>
+              .
+            </p>
+
+            <p>
+              Full-stack trained at{" "}
+              <span className="font-semibold text-highlight">Ironhack</span> and
+              currently preparing the{" "}
+              <span className="font-semibold text-highlight">
+                AWS Solutions Architect Associate
               </span>{" "}
-              and <span className="font-semibold text-highlight">MongoDB</span>.
-            </p>
-
-            <p>
-              Over time I shifted toward infrastructure and systems, managing
-              servers and deploying applications on{" "}
-              <span className="font-semibold text-highlight">AWS EC2</span>.
-            </p>
-
-            <p>
-              I work with{" "}
-              <span className="font-semibold text-highlight">
-                Docker, Nginx, Cloudflare, Linux and systemd
-              </span>
-              , building reproducible environments, pipelines, monitoring and
-              automation.
-            </p>
-
-            <p>
-              I also build labs using{" "}
-              <span className="font-semibold text-highlight">
-                VMware and Ubuntu Server
-              </span>
-              , designing `/srv` infra, backups and real deployments.
-            </p>
-
-            <p>
-              I am currently studying{" "}
-              <span className="font-semibold text-highlight">ASIR</span> to
-              strengthen virtualization, networking and cloud computing.
+              certification.
             </p>
           </>
         )}
       </motion.div>
 
-      {/* MOBILE VERSION (HIDDEN ON DESKTOP) */}
+      {/* MOBILE VERSION */}
       <motion.div className="block md:hidden text-base max-w-xl text-center space-y-4">
         {language === "es" ? (
           <>
             <p>
-              Ingeniero Cloud & DevOps con experiencia en{" "}
-              <span className="font-semibold">Linux, Docker, Nginx y AWS</span>.
+              Técnico de Sistemas en{" "}
+              <span className="font-semibold">Santander Digital Services</span>,
+              operando infraestructura crítica 24/7 con Linux y Mainframe IBM.
             </p>
             <p>
-              Gestión de servidores, despliegues contenerizados y automatización
-              con systemd y Cloudflare.
+              Despliegues en producción con{" "}
+              <span className="font-semibold">
+                Docker, Nginx, AWS y Cloudflare
+              </span>
+              . Automatización con Bash y Python.
             </p>
             <p>
-              Formado en Ironhack y actualmente cursando{" "}
-              <span className="font-semibold">ASIR</span>.
+              Preparando certificación{" "}
+              <span className="font-semibold">
+                AWS Solutions Architect Associate
+              </span>
+              .
             </p>
           </>
         ) : (
           <>
             <p>
-              Cloud & DevOps Engineer experienced with{" "}
+              Systems Engineer at{" "}
+              <span className="font-semibold">Santander Digital Services</span>,
+              operating critical 24/7 infrastructure with Linux and IBM
+              Mainframe.
+            </p>
+            <p>
+              Production deployments with{" "}
               <span className="font-semibold">
-                Linux, Docker, Nginx and AWS
+                Docker, Nginx, AWS and Cloudflare
               </span>
-              .
+              . Automation with Bash and Python.
             </p>
             <p>
-              Server management, containerized deployments and automation with
-              systemd and Cloudflare.
-            </p>
-            <p>
-              Trained at Ironhack and currently studying{" "}
-              <span className="font-semibold">ASIR</span>.
+              Currently preparing the{" "}
+              <span className="font-semibold">
+                AWS Solutions Architect Associate
+              </span>{" "}
+              certification.
             </p>
           </>
         )}
